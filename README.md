@@ -1,4 +1,4 @@
-# QC-tips-and-tricks
+# QC-tips-and-tricks - r tidyverse package
  
 QCing data is tedious, but it shouldn't be difficult.
 
@@ -6,9 +6,11 @@ This is a small collection of *very* simple techniques for QC'ing data using R t
 
 The main operations for QC'ing data have equivalents in SQL and R tidyverse. The following tidyverse and SQL functions are essentially the same: select(), distinct(), count(), group_by(), arrange() (ORDER BY in SQL), left_join() (LEFT OUTER JOIN in SQL). These operations and getting in the habit of looking at the design of your data using glimpse() and the actual values using view(), will give you most of what you need to slay even the datasets from hell.
 
-Finally, R brings data visualizations to the table [sic], something SQL cannot do. For continuous data, I always use ggplot histograms as well as arrange() ascending and descending order to look at the tails of the data. As a statistician, you would obviously use min() and max(), but for the data manager, that is a slippery slope into the world of statistics, probability and stochastic life styles, something to be avoided at all costs. 
+Finally, R brings data visualizations to the table [sic], something SQL cannot do. For continuous data, I always use ggplot histograms as well as arrange() ascending and descending order to look at the tails of the data. As a statistician, you would obviously use min() and max(), but for the data manager, that is a slippery slope into the world of statistics, probability and stochastic lifestyles, something to be avoided at all costs. 
 
 # Working example - nycflights13 package
+
+The rationale of this project is to take a familiar dataset, flights, from the nycflights13 and introduce all kinds of horrible inconsistencies and errors into the dataset. That defines the problem domain. Then, the solutions will be to hunt down and locate those problems as easily as possible. I am only going to QC the problem, that is, to flag the problem. How you go about fixing it might be through code or simply using a text editor, that's kind of up to you. Go with what works best for you. But then re-use the QC code to validate your fixes. This whole endeavor may be so simple its boring. But that is the goal, to make QC'ing tedious, rather than chaotic.
 
 
 
