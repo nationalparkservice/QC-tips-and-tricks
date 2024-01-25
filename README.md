@@ -6,7 +6,7 @@ This is a small collection of *very* simple techniques for QC'ing data using R t
 
 The main operations for QC'ing data have equivalents in SQL and R tidyverse. The following tidyverse and SQL functions are essentially the same: select(), distinct(), count(), group_by(), arrange() (ORDER BY in SQL), left_join() (LEFT OUTER JOIN in SQL). These operations and getting in the habit of looking at the design of your data using glimpse() and the actual values using view(), will give you most of what you need to slay even the datasets from hell.
 
-Finally, R brings data visualizations to the table [sic], something SQL cannot do. For continuous data, I always use ggplot histograms as well as arrange() ascending and descending. 
+Finally, R brings data visualizations to the table [sic], something SQL cannot do. For continuous data, I always use ggplot histograms as well as arrange() ascending and descending order to look at the tails of the data. As a statistician, you would obviously use min() and max(), but for the data manager, that is a slippery slope into the world of statistics, probability and stochastic life styles, something to be avoided at all costs. 
 
 # Working example - nycflights13 package
 
