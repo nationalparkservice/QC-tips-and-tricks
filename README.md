@@ -10,7 +10,7 @@ Finally, R brings data visualizations to the table [sic], something SQL cannot d
 
 # Working example - nycflights13 package
 
-The rationale of this project is to take a familiar dataset, flights, from the nycflights13 package and introduce all kinds of horrible inconsistencies and errors into the dataset. That defines the problem domain. Then, the solutions will be to hunt down and locate those problems as easily as possible. I am only going to QC the problem, that is, to flag the problem. How you go about fixing it might be through code or simply using a text editor, that's kind of up to you. Go with what works best for you. But then re-use the QC code to validate your fixes. Again, the goal is to make QC'ing tedious, rather than chaotic of procedurally difficult.
+The rationale of this project is to take a familiar dataset, flights, from the nycflights13 package and introduce all kinds of horrible inconsistencies and errors into the dataset. That defines the problem domain. Then, the solutions will be to hunt down and locate those problems as easily as possible. I am only going to QC the problem, that is, to flag the problem. How you go about fixing it might be through code or simply using a text editor, that's kind of up to you. Go with what works best for you. But then re-use the QC code to validate your fixes. Again, the goal is to make QC'ing tedious, rather than chaotic or procedurally difficult.
 
 
 
