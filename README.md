@@ -1,4 +1,4 @@
-# QC-tips-and-tricks - R tidyverse package
+# QC-tips-and-tricks
  
 QCing data is tedious, but it shouldn't be difficult.
 
