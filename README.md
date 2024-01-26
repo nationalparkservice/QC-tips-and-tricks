@@ -2,7 +2,7 @@
  
 QCing data is tedious, but it shouldn't be difficult.
 
-This is a small collection of *very* simple techniques for QC'ing data using the dplr and ggplot packages from R tidyverse. These are based on common methods used to tame big datasets in SQL and relational databases. Most "tidy" datasets are, in fact, true sets in the sense of relational data theory. The requirement for a true set is that every record is unique. Set operations are the basis of SQL and relational databases. With the development of dplyr grammar, you can use several of these set operations to quickly tame virtually any dataframe.
+This is a small collection of *very* simple techniques for QC'ing data using the dplyr and ggplot packages from R tidyverse. These are based on common methods used to tame big datasets in SQL and relational databases. Most "tidy" datasets are, in fact, true sets in the sense of relational data theory. The requirement for a true set is that every record is unique. Set operations are the basis of SQL and relational databases. With the development of dplyr grammar, you can use several of these set operations to quickly tame virtually any dataframe.
 
 The main operations for QC'ing data have equivalents in SQL and R tidyverse. The following tidyverse and SQL functions are essentially the same: select(), distinct(), count(), group_by(), arrange() (ORDER BY in SQL), left_join() (LEFT OUTER JOIN in SQL). These operations and getting in the habit of looking at the design of your data using glimpse() and the actual values using view(), will give you what you need to sort out the roughest datasets.
 
