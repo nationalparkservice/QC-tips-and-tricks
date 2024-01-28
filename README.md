@@ -1,10 +1,8 @@
 # QC-tips-and-tricks
- 
-QCing data might be tedious, but it shouldn't be difficult.
 
 This is a small collection of code examples for QC'ing data using the dplyr and ggplot packages from R tidyverse. These are based on common methods used to QC data in SQL and relational databases. Most "tidy" datasets are, in fact, true sets in the sense of relational database theory. The requirement for a true set is that every record is unique. With the development of dplyr grammar, you can use several of these set operations to tame the most unruly of dataframes.
 
-The main operations for QC'ing data have equivalents in SQL and R tidyverse. The following tidyverse and SQL functions are essentially the same: select(), distinct(), count(), group_by(), arrange() (ORDER BY in SQL), left_join() (LEFT OUTER JOIN in SQL). R also brings data visualizations to the table [sic], something SQL cannot do. For continuous data, for example, I really like to use ggplot histograms as well as the arrange() function to look at the tails of the data. 
+The main operations for QC'ing data have equivalents in SQL and R tidyverse. The following tidyverse and SQL functions are essentially the same: select(), distinct(), count(), group_by(), arrange() (ORDER BY in SQL), left_join() (LEFT OUTER JOIN in SQL). R also brings data visualizations to the table [sic], something SQL cannot do. For continuous data, for example, ggplot histograms work well with the arrange() function to look at the tails of the data. 
 
 # Example data - nycflights13 package
 
