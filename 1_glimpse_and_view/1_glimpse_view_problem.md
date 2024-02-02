@@ -41,7 +41,20 @@ From the flight1 file, you can see that R defaults to dbl for numeric data and c
 
 # 1_3_stray_commas
 
-When you load csv files, you are using commas to parse the columns of your data. Any other commas, for example, those embedded in a comments column, will break to parsing process. 
+When you load csv files, you are using commas to parse the columns of your data. Any other commas, for example, those embedded in a comments column, will break the parsing process. Extra columns will create extra columns. This can typically be tracked using the problems() function. In the following example, I have introduced three stray commas into the dataset. Lets see if we can find them.
 
 
-    
+    flights2 <- read_csv("./flights_day1_stray_commas.csv")
+    problems(flights2)
+
+The output from this gives...
+
+    # A tibble: 3 × 5
+        row   col expected   actual     file                                
+      <int> <int> <chr>      <chr>      <chr>                               
+    1   100    20 19 columns 20 columns C:/Users/GRowell/QC-tips-and-tricks…
+    2   200    20 19 columns 20 columns C:/Users/GRowell/QC-tips-and-tricks…
+    3   300    20 19 columns 20 columns C:/Users/GRowell/QC-tips-and-tricks…
+    > 
+  
+ We can see an additional comma in each of the identified rows. The fastest way to resolve stray commans is to load the csv file into a spreadsheet such as Excel, and go directly to the row number(s) indicated by the problems() function. Excel will help you identify which columns affected by the stray commas.
