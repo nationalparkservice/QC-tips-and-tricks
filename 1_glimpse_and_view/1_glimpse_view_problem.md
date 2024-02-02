@@ -4,7 +4,7 @@ Getting started... for all these examples, I'll assume you are using tidyverse a
 
 # 1_1_lay_of_the_land
 
-Its good to get started just by looking at the data. The view() function lets you look at the data. The glimpse() function lets you look at the first few records plus the datatypes (modes in R parlance). Its critical to check the datatypes before going any further. Below is the flights data without any modifications.
+Its good to get started just by looking at the data. The view() function lets you look at the data. Below is the flights data without any modifications.
 
     library(tidyverse)
     library(nycflights13)
