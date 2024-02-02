@@ -1,6 +1,8 @@
 # 1_glimpse_view_problem
 
-Getting started... in all these examples, I will assume you are using tidyverse and RStudio. The view() utility in RStudio can be replaced with the print() function combined with arrange() if you are not using RStudio. I will be using the terms "columns" and "rows" for all data description. In QC'ing data, we are not be interested in variables, observations, or the correctness of the data from an analytic perspective. Data analysis, in the strict sense, is interpretation of the meaning of the data values. This requires subject expertise in the study domain of the data. It is not necessary to have this expertise while QC'ing data. In those instances where subject expertise is required, I will indicate that you will need to consult a subject expert. This frequently happens during the QC process. However, for much of the QC work, we will be looking for common anomalies caused by problems in data handling, data loggers, database export functions and simple errors introduced by data editing.
+Getting started: In all these examples, I will assume you are using tidyverse and RStudio. The view() utility in RStudio can be replaced with the print() function combined with arrange() if you are not using RStudio. 
+
+I will be using the terms "columns" and "rows" for all data description. In QC'ing data, we are not typically interested in variables, observations, or the correctness of the data from an analytic perspective. Data analysis, in the strict sense, is interpretation of the meaning of the data values. This requires subject expertise in the study domain of the data. In those instances where subject expertise is required, I will indicate that you will need to consult a subject expert. This frequently happens during the QC process. In other instances, we will only be looking for common anomalies caused by problems in data handling, data loggers, database export functions and simple errors introduced by data editing.
 
 # 1_1_lay_of_the_land
 
@@ -26,7 +28,7 @@ In the following code, let's look at the datatypes associated with the flights d
     
     glimpse(flights)
 
-In the next code, we are loading a csv file containing the first 1 day of the flights data. We are just using day 1 to keep the csv file small. Notice the default datatypes resulting from the read_csv() function.
+In the next code, we are loading a csv file containing the first 1 day of the flights data. We are just using day 1 to keep the csv file small. Notice the default datatypes resulting from loading csv files...
     
     setwd("~")
     setwd("../.")
@@ -36,6 +38,11 @@ In the next code, we are loading a csv file containing the first 1 day of the fl
     glimpse(flights1)
 
 From the imported csv file, you can see that R defaults to dbl for numeric data and 
-chr for character data. It successfully converts the date / time data to dttm. Often, date and time data will be read as chr, so it pays to watch that closely. Typically, the default datatype is not what the scientist/analyst needs, as can be seen by the difference between the flights and flights1 dataframes, and you will need to consult the subject area expert to get this sorted out.
+chr for character data. in the original flights dataframe above, we can see the import defaults in flight1 clearly do not meet the intentions of the analyst. So, from the outset, you will need to know what the analyst requires when you are first loading your csv files.
+
+# 1_3_stray_commas
+
+When you load csv files, you are using commas to parse the columns of your data. Any other commas, for example, those embedded in a comments column, will break to parsing process. 
+
 
     
