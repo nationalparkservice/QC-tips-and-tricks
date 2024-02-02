@@ -19,7 +19,7 @@ The glimpse() function lets you look at the design of the dataset plus the first
     
 # 1_2_designs_and_intentions
 
-This section almost always requires consultation with the subject expert. Run glimpse() on your dataframe. Almost always, there are obvious things that will need your attention. Dates and times will often get imported as character data, while integer data will default to double. So it's really important to understand the expectations of your experts and scientists. You will also need help with issues of precision, for example, with physical measurements or with temporal and spatial data. 
+This section almost always requires consultation with the subject expert. Run glimpse() on your dataframe. Almost always, there are obvious things that will need your attention. Dates and times will often get imported as character data, while integer data will default to double. So its really important to understand the expectations of your experts and scientists. You will also need help with issues of precision, for example, with physical measurements or with temporal and spatial data. 
 
 In the following code, let's look at the datatypes associated with the flights dataset
 
@@ -37,7 +37,7 @@ In the next code, we are loading a csv file containing the first 1 day of the fl
     
     glimpse(flights1)
 
-From the imported csv file, again, you can see that R defaults to dbl for numeric data and chr for character data. In the original flights dataframe above, we can see the import defaults in flight1 clearly do not meet the intentions of the analyst. 
+From the flight1 file, you can see that R defaults to dbl for numeric data and chr for character data. Comparing that with the original flights dataframe, we can see the import defaults in flight1 clearly do not meet the intentions of the analyst. 
 
 # 1_3_stray_commas
 
