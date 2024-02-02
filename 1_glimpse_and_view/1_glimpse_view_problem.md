@@ -57,4 +57,4 @@ The output from this gives...
     3   300    20 19 columns 20 columns C:/Users/GRowell/QC-tips-and-tricks…
     > 
   
- We can see an additional comma in each of the identified rows. The fastest way to resolve stray commans is to load the csv file into a spreadsheet such as Excel, and go directly to the row number(s) indicated by the problems() function. Excel will help you identify which columns affected by the stray commas.
+There is an extra column in each row indicated by problems(). The fastest way to resolve stray commas is to load the csv file into a spreadsheet such as Excel, and go directly to the row number(s) indicated by the problems() function. You will be able to identify which columns affected by the stray commas.
