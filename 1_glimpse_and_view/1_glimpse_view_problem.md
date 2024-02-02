@@ -2,7 +2,7 @@
 
 Getting started: In all these examples, I will assume you are using tidyverse and RStudio. The view() utility in RStudio can be replaced with the print() function combined with arrange() if you are not using RStudio. 
 
-I will be using the terms "columns" and "rows" for all data description. In QC'ing data, we are not typically interested in variables, observations, or the correctness of the data from an analytic perspective. Data analysis, in the strict sense, is interpretation of the meaning of the data values. This requires subject expertise in the study domain of the data. In those instances where subject expertise is required, I will indicate that you will need to consult a subject expert. This frequently happens during the QC process. In other instances, we will only be looking for common anomalies caused by problems in data handling, data loggers, database export functions and simple errors introduced by data editing.
+I will be using the terms "columns" and "rows" for all data description. In QC'ing data, we can sometimes get by without knowing about variables, observations, or the correctness of the data from an analytic perspective. Data analysis, in the strict sense, is interpretation of the meaning of the data values. This requires subject expertise in the study domain of the data. In those instances where subject expertise is required, I will indicate that you need to consult a subject expert. This frequently happens during the QC process. In other instances, we will only be looking for common anomalies caused by problems in data handling, data loggers, database export functions and simple errors introduced by data editing.
 
 # 1_1_lay_of_the_land
 
@@ -19,7 +19,7 @@ The glimpse() function lets you look at the design of the dataset plus the first
     
 # 1_2_designs_and_intentions
 
-This section almost always requires consultation with the subject expert. Run glimpse() on your dataframe. Almost always, there are obvious things that will need your attention. Dates will typically get imported as character data, integer data may interpreted as continuous data. So it's really important to understand the expectations of your experts and scientists. You will typically need help with issues of precision, in temporal or spatial data. 
+This section almost always requires consultation with the subject expert. Run glimpse() on your dataframe. Almost always, there are obvious things that will need your attention. Dates and times will often get imported as character data, while integer data will default to double. So it's really important to understand the expectations of your experts and scientists. You will also need help with issues of precision, for example, with physical measurements or with temporal and spatial data. 
 
 In the following code, let's look at the datatypes associated with the flights dataset
 
@@ -28,7 +28,7 @@ In the following code, let's look at the datatypes associated with the flights d
     
     glimpse(flights)
 
-In the next code, we are loading a csv file containing the first 1 day of the flights data. We are just using day 1 to keep the csv file small. Notice the default datatypes resulting from loading csv files...
+In the next code, we are loading a csv file containing the first 1 day of the flights data. We are using day 1 just to keep the csv file small. Notice the default datatypes resulting from loading csv files...
     
     setwd("~")
     setwd("../.")
@@ -37,8 +37,7 @@ In the next code, we are loading a csv file containing the first 1 day of the fl
     
     glimpse(flights1)
 
-From the imported csv file, you can see that R defaults to dbl for numeric data and 
-chr for character data. in the original flights dataframe above, we can see the import defaults in flight1 clearly do not meet the intentions of the analyst. So, from the outset, you will need to know what the analyst requires when you are first loading your csv files.
+From the imported csv file, again, you can see that R defaults to dbl for numeric data and chr for character data. In the original flights dataframe above, we can see the import defaults in flight1 clearly do not meet the intentions of the analyst. 
 
 # 1_3_stray_commas
 
