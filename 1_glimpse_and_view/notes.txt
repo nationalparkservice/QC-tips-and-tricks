@@ -1,1 +1,13 @@
-Place glimpse and view examples here
+    
+
+    
+    
+    Outline of scripts
+
+    1_glimpse_view_problem
+    1_1_lay_of_the_land
+    1_2_designs_and_intentions
+    1_3_stray_commas
+    1_4_wrong_datatypes
+    1_5_additional_columns
+    
