@@ -1,12 +1,12 @@
 # QC-tips-and-tricks
 
-This is a small collection of code examples for QC'ing data using the dplyr and ggplot packages from R tidyverse. These are based on common methods used to QC data in SQL and relational databases. Most "tidy" datasets are, in fact, true sets in the sense of relational database theory. The requirement for a true set is that every record is unique. With the development of dplyr grammar, you can use several of these set operations to tame the most unruly of dataframes.
+This is a small collection of code examples for QC'ing data using the dplyr and ggplot packages from R tidyverse. These are based on common methods used to QC data in SQL and relational databases. Most "tidy" datasets are, in fact, true sets in the sense of relational database theory. The requirement for a true set is that every record is unique. With the development of dplyr grammar, you can use several of these set operations to tame the most unruly dataframes.
 
 The main operations for QC'ing data have equivalents in SQL and R tidyverse. The following tidyverse and SQL functions are essentially the same: select(), distinct(), count(), group_by(), arrange() (ORDER BY in SQL), left_join() (LEFT OUTER JOIN in SQL). R also brings data visualizations to the table [sic], something SQL cannot do. For continuous data, for example, ggplot histograms work well with the arrange() function to look at the tails of the data. 
 
 # Example data - nycflights13 package
 
-The rationale of this project is to take a familiar dataset, flights, from the nycflights13 package and introduce all kinds of horrible inconsistencies and errors into the data. That defines the problem domain. Then, the solutions will be to hunt down and locate those problems as quickly as possible. Again, the goal is to make QC'ing tedious, rather than chaotic, frustrating or difficult.
+The rationale of this project is to take a familiar dataset, flights, from the nycflights13 package and introduce all kinds of horrible inconsistencies and errors into the data. That defines the problem domain. The solutions will be to hunt down and locate those problems as quickly and efficiently as possible. The goal is to make QC'ing systematic and tedious, rather than chaotic, frustrating or difficult.
 
 Note - this is currently a work-in-progress so please feel free to send questions, comments or code fixes to me as repo issues. Thanks for reading, Gareth (gareth_rowell@nps.gov)
 
@@ -14,11 +14,12 @@ Note - this is currently a work-in-progress so please feel free to send question
     Outline of scripts
 
     1_glimpse_view_problem
-    1_1_lay_of_the_land
-    1_2_designs_and_intentions
-    1_3_stray_commas
-    1_4_wrong_datatypes
+    1_1_getting_started
+    1_2_lay_of_the_land
+    1_3_designs_and_intentions
+    1_4_stray_commas
     1_5_additional_columns
+  
     
     2_select
     2_1_one_big_set_many_small_sets
