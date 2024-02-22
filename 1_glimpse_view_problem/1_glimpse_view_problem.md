@@ -1,6 +1,6 @@
 # 1_glimpse_view_problem
 
-# 1_getting started
+# 1_getting_started
 
 In all these code examples, I will assume you are using the R tidyverse package and RStudio. The view() utility in RStudio can be replaced with the print() function combined with arrange() if you are not using RStudio. 
 
@@ -19,7 +19,7 @@ The glimpse() function lets you look at the design of the dataset. It provides t
     
     glimpse(flights)
     
-  
+
     
 # 1_3_designs_and_intentions
 
