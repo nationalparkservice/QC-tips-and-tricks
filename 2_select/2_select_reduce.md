@@ -1,11 +1,11 @@
 
 # 2_select
 
-After you've successfully loaded your csv file and all the columns line up correctly, its time to start looking at the values under each column. Typically, you'll be dealing with a very large number columns and the QC process can seem overwhelming.  Flattened csv flat files might run up to 20 to 30 or more columns and its be hard to figure out where to start. In our flights dataset, there are 19 columns. Again, the approach needs to be systematic.
+After you've successfully loaded your csv file and all the columns line up correctly, its time to start looking at the values under each column. Typically, you'll be dealing with a very large number columns and the QC process can seem overwhelming.  Flattened csv flat files might run up to 20 to 30 columns or more and its be hard to figure out where to begin. In our flights dataset, there are 19 columns, so its a good example to work with.
 
 # 2_1_one_big_set_many_small_sets
 
-In Qc'ing data, one big problem can be usually be reduced to many small problems. The common tool for data reduction is the select() function. Select allows you to pull together meaningful groups of data, that I've called "natural groups". Begin by looking at all of the columns. 
+In QC'ing data, one big problem can be usually be reduced to many small problems. The common tool for data reduction is the select() function. Select allows you to pull together meaningful groups of data, that I've called "natural groups". Begin by looking at all of the columns. 
 
 
     library(tidyverse) 
