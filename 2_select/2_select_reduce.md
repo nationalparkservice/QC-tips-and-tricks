@@ -5,7 +5,7 @@ After you've successfully loaded your csv file and all the columns line up corre
 
 # 2_1_one_big_set_many_small_sets
 
-In QC'ing data, one big problem can be usually be reduced to many small problems. The common tool for data reduction is the select() function. Select allows you to pull together meaningful groups of data, that I've called "natural groups". Begin by looking at all of the columns. 
+In QC'ing data, one big problem can be usually be reduced to many small problems. The common tool for data reduction is the select() function. Select allows you to pull together meaningful groups of data, which I call "natural groups". You can begin to find natural groups using select_all(). 
 
 
     library(tidyverse) 
