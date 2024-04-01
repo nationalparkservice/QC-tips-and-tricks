@@ -38,12 +38,13 @@ Flight information - departures
       select(flight, carrier, dest, dep_time, dep_delay)
       
       
-Flight information as a tidy dataset
+Flight information as a tidy dataset (see below)
 
     flights |>
       select(year, month, day, hour, minute, flight, 
-             carrier, tailnum, origin, dep_time, dep_delay, 
-             dest, arr_time, arr_delay, distance)
+             carrier, tailnum, origin, dep_time, sched_dep_time, dep_delay, 
+             dest, arr_time, sched_arr_time, arr_delay, air_time, distance) |>
+      view()
 
       
 Additional flight information - individual planes
@@ -56,10 +57,11 @@ Additional flight information - flight distance
     flights |>
       select(origin, dest, distance)
       
-
+The third select for flight information I've labeled as a "tidy"" dataset. Its called tidy because each row is an observation and each column is a unique variable. In database parlance, this would also be considered a "fact" table because each row represents a unique independent'fact' or observation. The select() variable list in this instance is almost as large as select_all(), but the columns are organized so related variables are adjacent to each other. 
 
 # 2_3_weird_variables 
 
+Qc'ing data is facilitated by reviewing the columns of data and their relationships to each other. But sometimes you run into columns that are just plain weird. They might be internal logger indexes, device or user internal identifiers, columns that contain the same values on every row, and columns that contain information that is redundant with other columns of data. The question is whether or not to omit these columns. The time_hour column in the flights dataset appears to be redundant with the other date time columns and might be a candidate for omission. Since the decision to omit data requires subject area expertise, its absolutely critical to consult with subject experts on decisions whether or not to include certain columns. In the flights data, time_hour looks like its redundant with the columns year, month, day, hour, all of which are in a tidier format and ready for analysis. 
 
 
 
