@@ -1,1 +1,5 @@
-Place select examples here
+   
+    2_select
+    2_1_one_big_set_many_small_sets
+    2_2_natural_sets
+    2_3_weird_variables 
