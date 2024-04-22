@@ -38,7 +38,7 @@ QC'ing categorical errors usually requires creating a unique list. In the exampl
 Next, I have introduced a single typo 'UAA' in the dataset. See if you can see it.
 
     
-    #setwd("./QC-tips-and-tricks/3_select_and_distinct")
+    #setwd("./3_select_distinct_left_join")
     
     flights_bad <- read_csv("./flights_bad_carrier.csv")
     
@@ -65,7 +65,7 @@ Next, I have introduced a single typo 'UAA' in the dataset. See if you can see i
 
 # 3_2_Using_left_joins    
     
-Because the typo included an additional letter, the error,'UAA' on record 12, was easy to spot. But what if carrier code had been two characters like all the rest or if we didn't know the correct codes for carriers? We could have a subject expert verify them for us or if a look-up table is available, we could test to see if all the values in our list show up correctly in the look-up table. In the following code, I'm testing the unique carrier list against the airlines look-up table. Note that the inner join flags the typo with an 'NA'. 
+Because the typo above included an additional letter, the error 'UAA' on record 12, was easy to spot. But what if carrier code had been two characters like all the rest or if we didn't know the correct codes for carriers? We could have a subject expert verify them for us or if a look-up table is available, we could test to see if all the values in our list show up correctly in the look-up table. In the following code, I'm testing the unique carrier list against the airlines look-up table. Note that the left join flags the typo with an 'NA'. 
 
     flights_bad |>
       distinct(carrier) |>
@@ -91,15 +91,16 @@ Because the typo included an additional letter, the error,'UAA' on record 12, wa
     #> 15 HA      Hawaiian Airlines Inc.   
     
 
-If the method for using left_joins is unclear to you, try breaking the process down into discrete steps. Create the left and right tables. Then run then left_join() function from the left table to the right table using the carrier column. Since its a left join, we will use *all* of the left values and only the right values that match. Since 'UAA' occurs in the left table, it is displayed in the join, but it has not values in the right table to match it, hence the 'NA'. I'll show the steps here.
+If the method above is unclear to you, try breaking the process down into individual steps. Create the left and right tables. Then run then left_join() function from the left table on the right table using the carrier column. Since its a left join, we will use *all* of the left values and only the right values that match. Since 'UAA' occurs in the left table, it is displayed in the left column, but it doesn't have corresponding values in the right table, hence the 'NA'. I'll show the steps here.
 
     left_table <- flights_bad |>
       distinct(carrier) 
   
     right_table <- airlines
     
+    
     left_table |>
-      left_join(right_table, carrier)
+      left_join(right_table, by = 'carrier')
 
 
 
@@ -117,7 +118,7 @@ Large numbers of dates and times should be validated using ggplot histograms. Bu
       distinct(day) |>
       print(n = 31)
 
-Distinct won't tell you much about the distribution of values in each date variable, but major typos can often pop up this way, so its always good to check.
+Distinct won't tell you much about the distribution of values, but major typos can often pop up this way, so its always good to check.
 
 
   
