@@ -1,7 +1,7 @@
 
 # 3_select_distinct_inner_join
 
-Combining select and distinct is a quick way to tame non-numeric fields. Any categorical errors or typos in text variables will usually show up in a unique list of values. Sometimes, distinct can be used to detect irregularities in integer values as well, especially if they codes, symbols or dates rather than continuous numeric values. 
+Combining select and distinct is a quick way to tame non-numeric fields. Any categorical errors or typos in text variables usually shows up in a unique list of values. Sometimes, distinct can be used to detect irregularities in integer values as well, especially if they codes, symbols or dates rather than continuous numeric values. 
 
 # 3_1_typos_and_categorical_errors
 
@@ -64,7 +64,7 @@ Next, we will introduce a single typo 'UAA' leading to an extra character in one
     #> 15 HA     
     
     
-Because the typo led to an additional letter, 'UAA' on record 12, it was easy to spot. But what if carrier code had been two characters or if we didn't know the correct codes for each variable. We could have a subject expert verify them for us or if a look-up table is available, we could test to see if each value in our unique list shows up correctly in the look-up table. In the following code, we test the unique flights list against the airlines look-up table. The inner join flags the typo with an 'NA'. 
+Because the typo led to an additional letter, 'UAA' on record 12, it was easy to spot. But what if carrier code had been two characters or if we didn't know the correct codes for each variable. We could have a subject expert verify them for us or if a look-up table is available, we could test to see if each value in our unique list shows up correctly in the look-up table. In the following code, we're test the unique flights list against the airlines look-up table. The inner join flags the typo with an 'NA'. 
 
     flights_bad |>
       distinct(carrier) |>
@@ -90,5 +90,7 @@ Because the typo led to an additional letter, 'UAA' on record 12, it was easy to
     #> 15 HA      Hawaiian Airlines Inc.   
     
 
+# Working with dates and times
 
+Large numbers of dates and times should be explored using ggplot and exploratory data analysis (eda) histogram plots. 
       
