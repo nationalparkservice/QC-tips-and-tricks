@@ -1,5 +1,5 @@
 
-# 3_select_distinct_inner_join
+# 3_select_distinct_left_join
 
 Combining select and distinct is a quick way to tame non-numeric fields. Any categorical errors or typos in text variables usually shows up in a unique list of values. You need to be familiar with your data to do this. If you aren't, a subject expert can often validate the list for you. If there are a lot of values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. I describe how to do this with distinct and left_join.
 
