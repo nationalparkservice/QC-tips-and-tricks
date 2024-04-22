@@ -29,8 +29,10 @@ Note - this is currently a work-in-progress so please feel free to send question
     2_2_natural_sets
     2_3_weird_variables 
     
-    3_select_distinct_inner_join
+    3_select_distinct_left_join
     3_1_typos_and_categorical_errors
+    3_2_Using_left_joins 
+    3_3_distinct_and_dates
     
     4_select_arrange
     4_1_min_max_values
