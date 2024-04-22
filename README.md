@@ -29,10 +29,8 @@ Note - this is currently a work-in-progress so please feel free to send question
     2_2_natural_sets
     2_3_weird_variables 
     
-    3_select_distinct
-    3_1_categorical_errors
-    3_2_typos
-    3_3_more_weird_variables 
+    3_select_distinct_inner_join
+    3_1_typos_and_categorical_errors
     
     4_select_arrange
     4_1_min_max_values
