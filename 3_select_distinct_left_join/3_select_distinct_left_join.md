@@ -118,7 +118,7 @@ Large numbers of dates and times should be validated using ggplot histograms. Bu
       distinct(day) |>
       print(n = 31)
 
-Distinct won't tell you much about the distribution of values, but major typos can often pop up this way, so its always good to check.
+Distinct won't tell you much about the distribution of values, but irregular values can often pop up this way, so its always good to check.
 
 
   
