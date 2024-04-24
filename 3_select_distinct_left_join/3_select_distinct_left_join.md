@@ -1,13 +1,15 @@
 
 # 3_select_distinct_left_join
 
-Combining select and distinct is a quick way to tame non-numeric fields. Any categorical errors or typos in text variables usually shows up in a unique list of values. You need to be familiar with your data to do this. If you aren't, a subject expert can often validate the list for you. If there are a lot of values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. I describe how to do this with distinct and left_join.
+Combining select and distinct is a quick way to tame non-numeric fields. Categorical errors and typos in text columns often jump out at you in a unique list. If there are a lot of values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. I describe how to validate data with left_join below.
 
 
 
 # 3_1_typos_and_categorical_errors
 
-QC'ing categorical errors usually requires creating a unique list. In the example below, I'm looking for errors in the airline carrier codes in the flights dataset. I am using just the first day of data to keep the csv files small. The methods will work just the same on very large datasets. 
+QC'ing categorical errors usually requires creating a unique list. The airline 
+carrier codes are displayed as a unique list in code below.
+
     
     library(tidyverse)
     library(nycflights13)
@@ -35,7 +37,7 @@ QC'ing categorical errors usually requires creating a unique list. In the exampl
     #> 14 HA     
 
       
-Next, I have introduced a single typo 'UAA' in the dataset. See if you can see it.
+Next, I have introduced a single typo 'UAA' in the dataset. Try to locate the error.
 
     
     #setwd("./3_select_distinct_left_join")
@@ -65,7 +67,7 @@ Next, I have introduced a single typo 'UAA' in the dataset. See if you can see i
 
 # 3_2_Using_left_joins    
     
-Because the typo above included an additional letter, the error 'UAA' on record 12, was easy to spot. But what if carrier code had been two characters like all the rest or if we didn't know the correct codes for carriers? We could have a subject expert verify them for us or if a look-up table is available, we could test to see if all the values in our list show up correctly in the look-up table. In the following code, I'm testing the unique carrier list against the airlines look-up table. Note that the left join flags the typo with an 'NA'. 
+Because the typo above included an additional letter, the error 'UAA' on record 12, was easy to spot. But what if carrier code had been two characters like all the rest or if we didn't know the correct codes for carriers? We could have a subject expert verify them for us or, if a look-up table is available, we could test to see if all the values in our list match up correctly with the codes in the look-up table. In the following code, I'm testing the unique carrier list against the airlines look-up table. Note that the left join flags the typo with an 'NA'. 
 
     flights_bad |>
       distinct(carrier) |>
@@ -91,7 +93,7 @@ Because the typo above included an additional letter, the error 'UAA' on record 
     #> 15 HA      Hawaiian Airlines Inc.   
     
 
-If the method above is unclear to you, try breaking the process down into individual steps. Create the left and right tables. Then run then left_join() function from the left table on the right table using the carrier column. Since its a left join, we will use *all* of the left values and only the right values that match. Since 'UAA' occurs in the left table, it is displayed in the left column, but it doesn't have corresponding values in the right table, hence the 'NA'. I'll show the steps here.
+If the method above is unclear to you, try breaking the process down into individual steps. Create the left and right tables. Then run then left_join() function from the left table on the right table using the carrier column. Since its a left join, we will use *all* the left values and only the right values that match. Since 'UAA' occurs in the left table, it is displayed in the left column, but it doesn't have a corresponding value in the right table, hence the 'NA'. I'll show the steps here.
 
     left_table <- flights_bad |>
       distinct(carrier) 
@@ -106,7 +108,7 @@ If the method above is unclear to you, try breaking the process down into indivi
 
 # 3_3_distinct_and_dates
 
-Large numbers of dates and times should be validated using ggplot histograms. But sometimes its also possible to catch date/time errors using distinct().
+Large numbers of dates and times can usually be validated using ggplot histograms (see section 7). But sometimes its also possible to catch date/time errors using distinct().
 
     flights |> 
       distinct(year)
