@@ -1,7 +1,7 @@
 
-# 3_select_distinct_left_join
+# 3_non_numeric_columns
 
-Combining select and distinct is a quick way to tame non-numeric fields. Categorical errors and typos in text columns often jump out at you in a unique list. If there are a lot of values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. I describe how to validate data with left_join below.
+Combining select and distinct is a quick way to tame non-numeric columns. Categorical errors and typos in text columns often jump out at you in a unique list. If there are a lot of values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. I describe how to validate data with left_join below.
 
 
 

@@ -17,28 +17,25 @@ Note - this is currently a work-in-progress so please feel free to send question
 
     Outline of scripts
 
-    1_glimpse_view_problem
-    1_1_getting_started
-    1_2_lay_of_the_land
-    1_3_designs_and_intentions
-    1_4_stray_commas
-    1_5_additional_columns
+    1_getting_started
+    1_1_lay_of_the_land
+    1_2_designs_and_intentions
+    1_3_stray_commas
+    1_4_additional_columns
   
-    2_select
+    2_2_exploring_the_dataset
     2_1_one_big_set_many_small_sets
     2_2_natural_sets
     2_3_weird_variables 
     
-    3_select_distinct_left_join
+    3_non_numeric_columns
     3_1_typos_and_categorical_errors
     3_2_Using_left_joins 
     3_3_distinct_and_dates
     
-    4_select_arrange
-    4_1_min_max_values
-    4_2_testing_for_na's
-    4_3_testing_for_NULLS
-    4_4_continuous_tails
+    4_missing_values
+    4_1_detecting_missing_values
+    4_2_whats_next
     
     5_group_by_count
     5_1_finding_duplicates 

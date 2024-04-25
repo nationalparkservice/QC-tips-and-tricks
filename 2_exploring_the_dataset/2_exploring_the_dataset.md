@@ -1,5 +1,5 @@
 
-# 2_select
+# 2_exploring_the_dataset
 
 After you've successfully loaded your csv file and all the columns line up correctly, its time to start looking at the values under each column. Typically, you'll be dealing with a very large number columns and the QC process can seem overwhelming.  Flattened csv flat files might run up to 20 columns or more and it can sometimes be hard to figure out where to begin. In our flights dataset, there are 19 columns, so its a good example to work with.
 
