@@ -10,7 +10,7 @@ The rationale of this project is to take a familiar dataset, flights, from the n
 
 # How to use these scripts
 
-If you are familiar with Git and GitHub, you can simply clone this repository. If you are new to GitHub, go to the Code button at the top of this page and select download ZIP. The ZIP file will contain contain everything. 
+If you are familiar with Git and GitHub, you can simply clone this repository. If you are new to GitHub, go to the Code button at the top of this page and select download ZIP. The ZIP file will contain everything. 
  
 Note - this is currently a work-in-progress so please feel free to send questions, comments or code fixes to me as repo issues. Thanks for reading, Gareth (gareth_rowell@nps.gov).
 

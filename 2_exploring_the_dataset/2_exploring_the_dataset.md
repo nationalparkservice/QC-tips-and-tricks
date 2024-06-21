@@ -53,7 +53,7 @@ Additional flight information - individual planes
       select(carrier, tailnum)
 
       
-The events data represents a "tidy"" dataset. Its called tidy because each row is an observation and each column is a unique variable. In database parlance, this would also be considered a "fact" table because each row represents a unique independent'fact' or observation. The select() variable list in this instance is almost as large as select_all(), but the columns are organized so related variables are adjacent to each other. 
+The events data represents a "tidy" dataset. Its called tidy because each row is an observation and each column is a unique variable. In database parlance, this would also be considered a "fact" table because each row represents a unique independent 'fact' or observation. The select() variable list in this instance is almost as large as select_all(), but the columns are organized so related variables are adjacent to each other. 
 
 # 2_3_weird_variables 
 
