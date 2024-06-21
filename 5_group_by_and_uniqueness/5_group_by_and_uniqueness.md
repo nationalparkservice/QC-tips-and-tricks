@@ -60,7 +60,7 @@ The duplicates are pushed to the top of the list by sorting the faa counts using
     
 # 5_2_testing_uniqueness
 
-Primary key columns can be tested for uniqueness using the same code as above. The result should always indicate counts of 1. Any values greater than 1 indicate additional occurrences of a value in the column. Here is correct primary key in the original 'airport' table. 
+Primary key columns can be tested for uniqueness using the same code as above. The result should always indicate counts of 1. Any values greater than 1 indicate additional occurrences of a value in the column. Here is the correct primary key in the original 'airport' table. 
 
     airports |> 
       group_by(faa) |>
