@@ -1,6 +1,6 @@
 
 
-# 5_unique_columns_in_lookup_tables
+# 5_group_by_and_uniqueness
 
 There are many situations where you may need to test for uniqueness. For example, species codes need to be unique in order to match one-for-one with scientific names, vegetation cover class codes will need to be unique to link cover class parameters to be displayed with field data, and locality codes must be unique to represent addresses or geographic coordinates of specific locations. In database parlance, these unique columns in the look-up tables are referred to as *primary keys*. Their purpose is to ensure that lookup tables can be joined one-to-many with data tables. In the next section, we'll see warning codes that are thrown when the one-to-many join fails due to duplicate values in the primary key column.
 
@@ -59,5 +59,28 @@ In the 'bad_join' example above, the warning message indicates that there is an 
 The duplicates are pushed to the top of the list by sorting the faa counts using the arrange descending function. 
     
 # 5_2_testing_uniqueness
+
+Primary key columns can be tested for uniqueness using the same code as above. The result should always indicate counts of 1. Any values greater than 1 indicate additional occurrences of a value in the column. Here is correct primary key in the original 'airport' table. 
+
+    airports |> 
+      group_by(faa) |>
+      count() |>
+      arrange(desc(n))
+    #># A tibble: 1,458 × 2
+    #># Groups:   faa [1,458]
+    #>   faa       n
+    #>   <chr> <int>
+    #> 1 04G       1
+    #> 2 06A       1
+    #> 3 06C       1
+    #> 4 06N       1
+    #> 5 09J       1
+    #> 6 0A9       1
+    #> 7 0G6       1
+    #> 8 0G7       1
+    #> 9 0P2       1
+    #>10 0S9       1
+    #># ℹ 1,448 more rows
+    #># ℹ Use `print(n = ...)` to see more rows
 
 # 5_3_multivariable_uniqueness
