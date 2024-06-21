@@ -37,12 +37,12 @@ Note - this is currently a work-in-progress so please feel free to send question
     4_1_detecting_missing_values
     4_2_whats_next
     
-    5_group_by_count
+    5_lookups_and_uniqueness
     5_1_finding_duplicates 
     5_2_testing_uniqueness
     5_3_multivariable_uniqueness
     
-    6_left_join_arrange
+    6_many_to_many
     6_1_good_lookups
     6_2_primary_key_tests
     6_3_foreign_key_tests

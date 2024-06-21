@@ -84,3 +84,9 @@ Primary key columns can be tested for uniqueness using the same code as above. T
     #># ℹ Use `print(n = ...)` to see more rows
 
 # 5_3_multivariable_uniqueness
+
+When you work with lots of data, you will run into tables that need to be related to one another and there are no tidy keys to use for your join functions. Almost always, you will need to combine data columns together to create your own keys. In order to do this, you will need to use *composite primary keys*. Composite keys are simply keys that include two or more columns which form a unique combined value. We'll work through this process in Section 6 to see how the weather data can be related to flights so that a data analyst could look at weather effects on flights. The first step is to create a composite primary key in the weather table. Looking at the weather data, we can see a natural grouping of year, month, day and hour. The weather data is reported hourly so the composite key containing year, month, day and hour will be serve nicely as a unique composite key for weather. Once those columns are combined, we can pull weather data for any hour of any day in the table. Interestingly, these columns have been aggregated for us in the column time-hour. 
+
+
+glimpse(flights)
+glimpse(weather)
