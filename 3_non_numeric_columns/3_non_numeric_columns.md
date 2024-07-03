@@ -1,7 +1,7 @@
 
 # 3_non_numeric_columns
 
-Combining select and distinct is a quick way to tame non-numeric columns. Categorical errors and typos in text columns often jump out at you in a unique list. If there are a lot of values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. I describe how to validate data with left_join below.
+Combining select and distinct is a quick way to tame non-numeric columns. Categorical errors and typos in text columns often jump out at you in a unique list. If there are a lot of unique values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. We'll see  how to validate data with a look-up table using left_join() below.
 
 
 
@@ -67,7 +67,7 @@ Next, I have introduced a single typo 'UAA' in the dataset. Try to locate the er
 
 # 3_2_Using_left_joins    
     
-Because the typo above included an additional letter, the error 'UAA' on record 12, was easy to spot. But what if carrier code had been two characters like all the rest or if we didn't know the correct codes for carriers? We could have a subject expert verify them for us or, if a look-up table is available, we could test to see if all the values in our list match up correctly with the codes in the look-up table. In the following code, I'm testing the unique carrier list against the airlines look-up table. Note that the left join flags the typo with an 'NA'. 
+Because the typo above included an additional letter, the error 'UAA' on record 12, was easy to spot. But what if the carrier code had been two characters like all the rest or if we didn't know the correct codes for carriers? We could have a subject expert verify them for us or, if a look-up table is available, we could test to see if all the values in our list match up correctly with the codes in the look-up table. In the following code, I'm testing the unique carrier list against the airlines look-up table. Note that the left join flags the typo with an 'NA'. 
 
     flights_bad |>
       distinct(carrier) |>
@@ -99,7 +99,6 @@ If the method above is unclear to you, try breaking the process down into indivi
       distinct(carrier) 
   
     right_table <- airlines
-    
     
     left_table |>
       left_join(right_table, by = 'carrier')

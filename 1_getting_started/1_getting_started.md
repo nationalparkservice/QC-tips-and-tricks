@@ -22,7 +22,7 @@ The glimpse() function lets you look at the design of the dataset. It provides t
     
 # 1_2_designs_and_intentions
 
-This section almost always requires consultation with the subject expert. Run glimpse() on your dataframe. There will be obvious issues. For example, dates and times might be imported as character data, while integer data will default to double. From the outset, its important to understand the goals of your experts and scientists. They will help you understand what you are dealing with. Also, you will almost always need help with issues of precision, for example, with the number of significant figures to be maintained for physical measurements or with temporal and geo-spatial data. Bringing in the subject expert early in the process can prevent a lot of confusion later on.
+This section almost always requires consultation with the subject expert. Run glimpse() on your dataframe. There will be obvious issues. For example, dates and times might be imported as character data, while integer data will default to double. From the outset, its important to understand the goals of your experts and scientists. They will help you understand what you are dealing with. Also, you will almost always need help with issues of precision, for example, with the number of significant figures to be maintained for physical measurements or with the precision of temporal and geo-spatial data. Bringing in the subject expert early in the process can prevent a lot of confusion later on.
 
 In the following code, let's look at the datatypes associated with the flights dataset
 
