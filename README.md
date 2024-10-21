@@ -1,17 +1,15 @@
 # QC-tips-and-tricks
 
-The initial goal of this project was to develop some code examples for QC'ing data using the dplyr and ggplot packages from R tidyverse. By QC'ing, I mean verifying the state of the data using simple quality control techniques based on the data wrangling toolset of different data science technologies.  The approach is based on QC'ing data techniques commonly used in SQL and relational databases.  Because data wrangling, data transformations and data cleaning operations are so fundamental to the day-to-day activities of data science, there have been parallel approaches developed in R tidyverse, Python pandas, and analytic platforms like Power BI.  Much of this has come about just in the last 10 - 15 years or so. 
+This is a small collection of techniques for establishing quality control over (QC'ing) datasets. These techniques can help you to clean up data prior to publishing datasets. Functionally equivalent code examples are given in R and Python. 
 
-A common and seemingly endless discussion centers around whether to use R, Python or some other technology for data science. Obviously, the choice of platforms should be driven by the scope and requirements of individual projects. R is a statistical programming language, Python is a general purpose programming language and Power BI is a data analytics platform fully integrated into the Microsoft enterprise ecosystem. While these technologies are quite different from one another, each provides a complete set of tools for data wrangling.
+The motivation for including both R and Python is partly to reach a wider audience, but it's also to show these techniques are essentially language independent. They're based on the common "set" based methods used to QC data in SQL and relational databases. Most rectangular datasets are, in fact, true sets in the sense of relational database theory. The requirement for a true set is that every record is unique. With the development of R dplyr and Python pandas, you can use these set operations to tame the most unruly dataframes.
 
-
-The core operations for QCing data that I address here are centered aournd SQL and relational databases. The following SQL operations are now available in other platforms including select(), distinct(), count(), group_by(), arrange() (ORDER BY in SQL), left_join() (LEFT OUTER JOIN in SQL). Additional operations like pivot and unpivot and their equivalents are also extremely useful for cleaning up datasets.  
-
+The main operations for QC'ing data can be expressed in SQL, R and Python. These include select(), distinct(),  group_by(), left_join().  Both R and Python also brings data visualizations to the table [sic], something SQL cannot do. For continuous data, for example, ggplot histograms work well with the arrange() function to look at the tails of the data. 
 
 
-# Example data - 
+# Example data - Electric Vehicle Population Data
 
-The rationale of this project is to take a familiar dataset, flights, from the nycflights13 package and introduce all kinds of horrible inconsistencies and errors into the data. That defines the problem domain. The solutions will be to hunt down and locate those problems as quickly and efficiently as possible. The goal is to make QC'ing systematic and tedious, rather than chaotic, frustrating or difficult.
+The rationale of this project is to take a subset of data from a popular dataset from DATA.GOV, the Electric Vehicle Population Data from Washington State, and introduce all kinds of horrible inconsistencies and errors into the data. That defines the problem domain. The solutions will be to hunt down and locate those problems as quickly and efficiently as possible. The goal is to make QC'ing *systematic and tedious*, rather than chaotic, frustrating or difficult.
 
 # How to use these scripts
 
@@ -40,7 +38,7 @@ Note - this is currently a work-in-progress so please feel free to send question
     
     4_missing_values
     4_1_detecting_missing_values
-    4_2_whats_next
+    4_2_resolving_missing_data
     
     5_lookups_and_uniqueness
     5_1_finding_duplicates 
