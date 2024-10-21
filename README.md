@@ -6,6 +6,7 @@ The motivation for including both R and Python is partly to reach a wider audien
 
 The main operations for QC'ing data can be expressed in SQL, R and Python. These include select(), distinct(),  group_by(), left_join().  Both R and Python also brings data visualizations to the table [sic], something SQL cannot do. For continuous data, for example, ggplot histograms work well with the arrange() function to look at the tails of the data. 
 
+
 # Example data - Electric Vehicle Population Data
 
 The rationale of this project is to take a subset of data from a popular dataset from DATA.GOV, the Electric Vehicle Population Data from Washington State, and introduce all kinds of horrible inconsistencies and errors into the data. That defines the problem domain. The solutions will be to hunt down and locate those problems as quickly and efficiently as possible. The goal is to make QC'ing *systematic and tedious*, rather than chaotic, frustrating or difficult.
