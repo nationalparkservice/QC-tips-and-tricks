@@ -8,7 +8,7 @@ The main operations for QC'ing data can be expressed in SQL, R and Python. These
 
 # Example data - Electric Vehicle Population Data
 
-The rationale of this project is to take a subset of data from a popular dataset from DATA.GOV, the Electric Vehicle Population from Washington State, and introduce all kinds of horrible inconsistencies and errors into the data. That defines the problem domain. The solutions will be to hunt down and locate those problems as quickly and efficiently as possible. The goal is to make QC'ing *systematic and tedious*, rather than chaotic, frustrating or difficult.
+The rationale of this project is to take a subset of data from a popular dataset from DATA.GOV, the Electric Vehicle Population Data from Washington State, and introduce all kinds of horrible inconsistencies and errors into the data. That defines the problem domain. The solutions will be to hunt down and locate those problems as quickly and efficiently as possible. The goal is to make QC'ing *systematic and tedious*, rather than chaotic, frustrating or difficult.
 
 # How to use these scripts
 
