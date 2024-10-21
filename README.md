@@ -1,10 +1,15 @@
 # QC-tips-and-tricks
 
-This is a small collection of code examples for QC'ing data using the dplyr and ggplot packages from R tidyverse. These are based on common methods used to QC data in SQL and relational databases. Most "tidy" datasets are, in fact, true sets in the sense of relational database theory. The requirement for a true set is that every record is unique. With the development of dplyr grammar, you can use several of these set operations to tame the most unruly dataframes.
+The initial goal of this project was to develop some code examples for QC'ing data using the dplyr and ggplot packages from R tidyverse. By QC'ing, I mean verifying the state of the data using simple quality control techniques based on the data wrangling toolset of different data science technologies.  The approach is based on QC'ing data techniques commonly used in SQL and relational databases.  Because data wrangling, data transformations and data cleaning operations are so fundamental to the day-to-day activities of data science, there have been parallel approaches developed in R tidyverse, Python pandas, and analytic platforms like Power BI.  Much of this has come about just in the last 10 - 15 years or so. 
 
-The main operations for QC'ing data have equivalents in SQL and R tidyverse. The following tidyverse and SQL functions are essentially the same: select(), distinct(), count(), group_by(), arrange() (ORDER BY in SQL), left_join() (LEFT OUTER JOIN in SQL). R also brings data visualizations to the table [sic], something SQL cannot do. For continuous data, for example, ggplot histograms work well with the arrange() function to look at the tails of the data. 
+A common and seemingly endless discussion centers around whether to use R, Python or some other technology for data science. Obviously, the choice of platforms should be driven by the scope and requirements of individual projects. R is a statistical programming language, Python is a general purpose programming language and Power BI is a data analytics platform fully integrated into the Microsoft enterprise ecosystem. While these technologies are quite different from one another, each provides a complete set of tools for data wrangling.
 
-# Example data - nycflights13 package
+
+The core operations for QCing data that I address here are centered aournd SQL and relational databases. The following SQL operations are now available in other platforms including select(), distinct(), count(), group_by(), arrange() (ORDER BY in SQL), left_join() (LEFT OUTER JOIN in SQL). Additional operations like pivot and unpivot and their equivalents are also extremely useful for cleaning up datasets.  
+
+
+
+# Example data - 
 
 The rationale of this project is to take a familiar dataset, flights, from the nycflights13 package and introduce all kinds of horrible inconsistencies and errors into the data. That defines the problem domain. The solutions will be to hunt down and locate those problems as quickly and efficiently as possible. The goal is to make QC'ing systematic and tedious, rather than chaotic, frustrating or difficult.
 
