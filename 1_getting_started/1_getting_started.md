@@ -40,7 +40,6 @@ For R, use
 	head(df)
 	tail(df)
 	
-	glimpse(df)
 	view(df)
 	
 	
@@ -68,32 +67,28 @@ When working with large dataframes in the IPython console, it may be impractical
 	df.tail(100)
 	
 
-
-	
-	
-	
-	
-
-	
-	
-		
-
-
-
-Typically, we want to see more than just the heads and tails of the dataframe, and we want to expose all of the columns
-
-
-	
-
-
-
-    
-
-
     
 # 1_2_designs_and_intentions
 
-This section almost always requires consultation with the subject expert. Run glimpse() on your dataframe. There will be obvious issues. For example, dates and times might be imported as character data, while integer data will default to double. From the outset, its important to understand the goals of your experts and scientists. They will help you understand what you are dealing with. Also, you will almost always need help with issues of precision, for example, with the number of significant figures to be maintained for physical measurements or with the precision of temporal and geo-spatial data. Bringing in the subject expert early in the process can prevent a lot of confusion later on.
+Following your initial inspection of the data, you will need to verify, and in some instances coerce data types so they correctly represent the data. For example, dates and times might be imported as character data, while integer data will default to double. In these cases, you can coerce the data column to the correct data type. 
+
+In R, we can see the default datatypes applied by the interpreter with
+
+	glimpse(df)
+
+In Python, you use the dtypes method
+
+	df.dtypes
+
+
+
+
+
+
+
+
+
+
 
 In the following code, let's look at the datatypes associated with the flights dataset
 
