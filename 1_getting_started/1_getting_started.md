@@ -1,23 +1,39 @@
 
+    1_getting_started
+    1_1_lay_of_the_land
+    1_2_designs_and_intentions
+    1_3_stray_commas
+    1_4_additional_columns
+	
+	
 # 1_getting_started
 
-In all these code examples, I will assume you are using the R tidyverse package and RStudio. The view() utility in RStudio can be replaced with the print() function combined with arrange() if you are not using RStudio. 
+QC'ing data can seem overwhelming at first. So, its important to be systematic in your approach from the outset. Assuming you have no familiarity what-so-ever with the dataset, the place to start is simply by exploring the columns and rows of data.  I will be using the terms "columns", "rows" and "dataframes" for all dataset descriptions. 
 
-I will be using the terms "columns" and "rows" for all data description. In QC'ing data, we can often get by without knowing about variables, observations, or the correctness of the data from an analytic perspective. Data analysis, in the strict sense, is *the interpretation of the meaning of data values*. This requires subject expertise in the study domain of the data. In those instances where subject expertise is required, I will indicate that you need to consult a subject expert. In many instances, we only need to look for common anomalies caused by data handling, data loggers, database export functions and simple errors introduced during data editing.
+In the QC-phase of data publication, we will not be evaluating the informative value of the data or its success in meeting project objectives. Those duties, typically called "data verification" and "data validation", are shared by the data analyst and project leads. Instead, we are focusing on the correctness of the data in the same sense that a proof-reader would focus on misspelling, format layout and appearence in the final evaluation of an article prior to its release for publication. Again, the content review is the role of data analysts, project leads and their staff, and it needs be completed in advance of the QC process. In those instances where subject expertise is required, I will indicate that you need to consult with a subject-area expert. In most instances, we are only looking for common anomalies caused by data handling, data loggers, database export functions and simple errors introduced during data editing.
+
+In the examples that follow, you will need to load certain libraries for all your scripts. For R, you will need dplyr and ggplot or you can simply load the tidyverse platform which is what I will do here, and for Python, you will need pandas, matplotlib and the IPython platform. There are excellent instructions for setting up your development environment for R in the online book, https://r4ds.hadley.nz/ and for Python, https://wesmckinney.com/book/. If you plan on making a career out of data management, please consider supporting the authors by buying their books. 
+
+As you write your scripts, be sure to include the following header code. For R, its
+
+	library(tidyverse)
+
+and for Python, 
+
+	import pandas as pd
+	import matplotlib.pyplot as plt
+
+
 
 # 1_1_lay_of_the_land
 
-Its good to get started just by looking at the data from a high level. The view() function lets you look at all the data. The view() function is especially nice because you can click on each column name and it will alternately sort ascending or descending. This is a quick way to look at the tails of each column. Below is the flights dataset without any modifications.
+Its good to get started just by looking at the data. Both R and Python provide methods for quickly viewing the dataset. We'll begin by loading the data and looking at the heads and tails. In all the following examples, you will need to 
 
-    library(tidyverse) 
-    library(nycflights13)
+
+
+
     
-    view(flights)
-    
-The glimpse() function lets you look at the design of the dataset. It provides the first few records of each column plus the datatypes (variable modes in R parlance). So, just with view() and glimpse(), you can see all your data and get a notion of the design of the dataset. 
-    
-    glimpse(flights)
-    
+
 
     
 # 1_2_designs_and_intentions
