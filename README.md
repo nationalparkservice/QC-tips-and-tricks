@@ -45,11 +45,11 @@ Note - this is currently a work-in-progress so please feel free to send question
     5_2_testing_uniqueness
     5_3_multivariable_uniqueness
     
-    6_many_to_many
-    6_1_good_lookups
+    6_joins
+    6_1_join_types
     6_2_primary_key_tests
     6_3_foreign_key_tests
-    6_4_left_vs_inner_joins
+    6_4_one_to_many_errors
     6_5_many_to_many_errors
     
     7_histograms_arrange

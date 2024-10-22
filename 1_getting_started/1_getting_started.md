@@ -10,7 +10,7 @@
 
 QC'ing data can seem overwhelming at first. So, its important to be systematic in your approach from the outset. Assuming you have no familiarity what-so-ever with the dataset, the place to start is simply by exploring the columns and rows of data.  I will be using the terms "columns", "rows" and "dataframes" for all dataset descriptions. 
 
-In the QC-phase of data publication, we will not be evaluating the informative value of the data or its success in meeting project objectives. Those duties, typically called "data verification" and "data validation", are shared by the data analyst and project leads. Instead, we are focusing on the correctness of the data in the same sense that a proof-reader would focus on misspelling, format layout and appearence in the final evaluation of an article prior to its release for publication. Again, the content review is the role of data analysts, project leads and their staff, and it needs be completed in advance of the QC process. In those instances where subject expertise is required, I will indicate that you need to consult with a subject-area expert. In most instances, we are only looking for common anomalies caused by data handling, data loggers, database export functions and simple errors introduced during data editing.
+In the QC-phase of data publication, we won't typically interpret that data or its success in meeting project objectives. Those tasks should be accomplished by the data analyst and project leads earlier in the workflow. Instead, we are focusing on the correctness of the data in the same sense that a proof-reader would focus on misspelling, format layout and appearence in the final evaluation of an article prior to its release for publication. Again, the content review is the role of data analysts, project leads and their staff, and it needs be completed in advance of the QC process. In those instances where subject expertise is required, I will indicate that you need to consult with a subject-area expert. In most instances, we are only looking for common anomalies caused by data handling, data loggers, database export functions and simple errors introduced during data editing.
 
 In the examples that follow, you will need to load certain libraries for all your scripts. For R, you will need dplyr and ggplot or you can simply load the tidyverse platform which is what I will do here, and for Python, you will need pandas, matplotlib and the IPython platform. There are excellent instructions for setting up your development environment for R in the online book, https://r4ds.hadley.nz/ and for Python, https://wesmckinney.com/book/. If you plan on making a career out of data management, please consider supporting the authors by buying their books. 
 
@@ -20,15 +20,70 @@ As you write your scripts, be sure to include the following header code. For R, 
 
 and for Python, 
 
+	import os
 	import pandas as pd
 	import matplotlib.pyplot as plt
 
 
-
 # 1_1_lay_of_the_land
 
-Its good to get started just by looking at the data. Both R and Python provide methods for quickly viewing the dataset. We'll begin by loading the data and looking at the heads and tails. In all the following examples, you will need to 
+Its good to get started just by looking at the data. Both R and Python provide methods for quickly viewing the dataset. 
 
+For R, use 
+
+	setwd("C:/Users/Growell/QC-tips-and-tricks/1_getting_started")
+	getwd()
+	
+	df <- read_csv("Electric_Vehicle_Population.csv")
+	df
+	
+	head(df)
+	tail(df)
+	
+	glimpse(df)
+	view(df)
+	
+	
+
+For Python, use
+	
+	os.chdir("c:\\Users\\growell\\QC-tips-and-tricks\\1_getting_started")
+	print(os.getcwd())
+		
+	df = pd.read_csv("Electric_Vehicle_Population.csv")
+	df	
+		
+	df.head()
+	df.tail()
+		
+	pd.set_option('display.max_rows', None)
+	pd.set_option('display.max_columns', None)
+		
+	print(df)
+		
+
+When working with large dataframes in the IPython console, it may be impractical to display all rows, in which case you can simply display the first and last 100 or so rows as follows
+
+	df.head(100)
+	df.tail(100)
+	
+
+
+	
+	
+	
+	
+
+	
+	
+		
+
+
+
+Typically, we want to see more than just the heads and tails of the dataframe, and we want to expose all of the columns
+
+
+	
 
 
 
