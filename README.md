@@ -2,14 +2,14 @@
 
 This is a small collection of techniques for establishing quality control over (QC'ing) datasets. These techniques can help you to clean up data prior to publishing datasets. Functionally equivalent code examples are given in R and Python. 
 
-The motivation for including both R and Python is partly to reach a wider audience, but it's also to show these techniques are essentially language independent. They're based on the common "set" based methods used to QC data in SQL and relational databases. Most rectangular datasets are, in fact, true sets in the sense of relational database theory. The requirement for a true set is that every record is unique. With the development of R dplyr and Python pandas, you can use these set operations to tame the most unruly dataframes.
+The motivation for including both R and Python is partly to reach a wider audience, but it's also to show that these techniques are essentially language independent. They're based on the common "set" based methods used to QC data in SQL and relational databases. Most rectangular datasets are, in fact, true sets in the sense of relational database theory. The requirement for a true set is that every record is unique. With the development of R dplyr and Python pandas, you can use these set operations to tame even the most unruly dataframes.
 
-The main operations for QC'ing data can be expressed in SQL, R and Python. These include select(), distinct(),  group_by(), left_join().  Both R and Python also brings data visualizations to the table [sic], something SQL cannot do. For continuous data, for example, ggplot histograms work well with the arrange() function to look at the tails of the data. 
+The main methods for QC'ing data can be expressed in SQL, R and Python. These methods include SELECT, UNIQUE,  GROUP BY, JOIN and several other column-based operations.  Both R and Python also brings data visualizations to the table, something SQL cannot do. For continuous data, for example, ggplot histograms work well with the arrange() function to look at the tails of the data. 
 
 
 # Example data - Electric Vehicle Population Data
 
-The rationale of this project is to take a subset of data from a popular dataset from DATA.GOV, the Electric Vehicle Population Data from Washington State, and introduce all kinds of horrible inconsistencies and errors into the data. That defines the problem domain. The solutions will be to hunt down and locate those problems as quickly and efficiently as possible. The goal is to make QC'ing *systematic and tedious*, rather than chaotic, frustrating or difficult.
+The rationale of this project is to take a dataset, the Electric Vehicle Population Data from Washington State, and introduce all kinds of horrible inconsistencies and errors into the data. (NOTE - the dataset used here is a small subset of the actual dataset. See the complete dataset served up at DATA.GOV).  That defines the problem domain. The solutions will be to hunt down and locate those problems as quickly and efficiently as possible. The goal is to make QC'ing *systematic and tedious, rather than chaotic, frustrating or difficult*.
 
 # How to use these scripts
 
