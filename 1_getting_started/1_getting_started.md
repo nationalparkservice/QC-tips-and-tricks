@@ -1,7 +1,7 @@
 
     1_getting_started
     1_1_lay_of_the_land
-    1_2_designs_and_intentions
+    1_2_setting_data_types
     1_3_stray_commas
     1_4_additional_columns
 	
@@ -10,7 +10,7 @@
 
 QC'ing data can seem overwhelming at first. So, its important to be systematic in your approach from the outset. Assuming you have no familiarity what-so-ever with the dataset, the place to start is simply by exploring the columns and rows of data.  I will be using the terms "columns", "rows" and "dataframes" for all dataset descriptions. 
 
-In the QC-phase of data publication, we won't typically interpret that data or its success in meeting project objectives. Those tasks should be accomplished by the data analyst and project leads earlier in the workflow. Instead, we are focusing on the correctness of the data in the same sense that a proof-reader would focus on misspelling, format layout and appearence in the final evaluation of an article prior to its release for publication. Again, the content review is the role of data analysts, project leads and their staff, and it needs be completed in advance of the QC process. In those instances where subject expertise is required, I will indicate that you need to consult with a subject-area expert. In most instances, we are only looking for common anomalies caused by data handling, data loggers, database export functions and simple errors introduced during data editing.
+In the QC-phase of data publication, we won't typically be interpreting the data or doing a subject-area analysis. Those tasks should be done by the data analyst and project leads earlier in the workflow. Instead, we'll be focusing on the correctness of the data in the same sense that a proof-reader would focus on misspelling, format layout and appearence in the final evaluation of an article prior to its release for publication. In those instances where subject expertise is required, I'll indicate that you need to consult with a subject-area expert. In most instances, we are only looking for common anomalies caused by data handling, data loggers, database export functions and simple errors introduced during data editing.
 
 In the examples that follow, you will need to load certain libraries for all your scripts. For R, you will need dplyr and ggplot or you can simply load the tidyverse platform which is what I will do here, and for Python, you will need pandas, matplotlib and the IPython platform. There are excellent instructions for setting up your development environment for R in the online book, https://r4ds.hadley.nz/ and for Python, https://wesmckinney.com/book/. If you plan on making a career out of data management, please consider supporting the authors by buying their books. 
 
@@ -68,9 +68,9 @@ When working with large dataframes in the IPython console, it may be impractical
 	
 
     
-# 1_2_designs_and_intentions
+# 1_2_setting_data_types
 
-Following your initial inspection of the data, you will need to verify, and in some instances coerce data types so they correctly represent the data. For example, the R interpreter will load any numeric field as double by default, while the Python interpreter will load all numerical data as integer unless it sees a decimal point in the number. In these cases, you can manually coerce the data columns to the correct data type. 
+Following your initial inspection of the data, you will need to verify and in some instances coerce data types so they correctly represent the data. For example, the R interpreter will load numeric colmuns as double by default, while the Python interpreter will load all numerical data as integer unless it sees a decimal point in the number. In these cases, you can manually coerce the data columns to the correct data type. 
 
 In R, we can display the data types and coerce the double columns to integer as follows
 
