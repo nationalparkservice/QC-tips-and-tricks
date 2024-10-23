@@ -97,7 +97,7 @@ Vehicle_ID,County,City,State,Postal Code,Model Year,Make,Model,Electric Vehicle 
 8858,King,Seattle,WA,98178,2023,KIA,NIRO,Plug-in Hybrid Electric Vehicle (PHEV),Clean Alternative Fuel Vehicle Eligible,33,0,37,PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)
 8951,King,Bothell,WA,98011,2024,RIVIAN,R1S,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,1,PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)
 9044,King,Redmond,WA,98052,2023,TESLA,MODEL Y,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,45,PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)
-9137,King,Seattle,WA,98125,2021,AUDI,Q5 E,Plug-in Hybrid Electric Vehicle (PHEV),Not eligible due to low battery range,18,0,46,CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)
+9137,King,Seattle,WA,98125,2021,AUDI,Q5 E,Plug-in Hybrid Electric Vehicle (PHEV),Not eligible due to low battery range,18,0,46,,CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)
 9137,King,Seattle,WA,98125,2021,AUDI,Q5 E,Plug-in Hybrid Electric Vehicle (PHEV),Not eligible due to low battery range,18,0,46,CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)
 9230,Clark,Battle Ground,WA,98604,2023,TESLA,MODEL 3,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,18,BONNEVILLE POWER ADMINISTRATION||PUD NO 1 OF CLARK COUNTY - (WA)
 9323,Kitsap,Bainbridge Island,WA,98110,2015,TESLA,MODEL S,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,208,0,23,PUGET SOUND ENERGY INC
