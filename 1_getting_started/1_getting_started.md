@@ -90,22 +90,22 @@ In Python, you can use the dtypes method and coerce integer columns to float as 
 
 # 1_3_stray_commas
 
-When you load csv files, you are using commas to parse the columns of your data. Any stray commas, for example, those embedded in a comments column, will break the parsing process. Extra commas will typically create extra columns. This can be tracked using the problems() function. In the following example, I have introduced three stray commas into the dataset. Lets see if we can find them.
+When you load csv files, you are using commas to parse the columns of your data. Any stray commas, for example, those embedded in a comments column, will break the parsing process. Extra commas will typically create extra columns. WIth R, this can be tracked using the problems() function. In the following example, I have introduced three stray commas into the dataset. Lets see if we can find them.
 
-    flights2 <- read_csv("./flights_day1_stray_commas.csv")
-    problems(flights2)
+In R,
 
-The output from this gives...
+	df <- read_csv("Electric_Vehicle_Population_commas.csv")
+	problems(df)
+	
+The function problems() identifies lines 100, 200 and 300 where there are problems.
+	
+In Python,
 
-    # A tibble: 3 × 5
-        row   col expected   actual     file                                
-      <int> <int> <chr>      <chr>      <chr>                               
-    1   100    20 19 columns 20 columns C:/Users/GRowell/QC-tips-and-tricks…
-    2   200    20 19 columns 20 columns C:/Users/GRowell/QC-tips-and-tricks…
-    3   300    20 19 columns 20 columns C:/Users/GRowell/QC-tips-and-tricks…
-    > 
-  
-There is an extra column in each row indicated by problems(). The fastest way to resolve stray commas is to load the csv file into a spreadsheet such as Excel and go directly to the row number(s) indicated by the problems() function. You will be able to identify which columns are affected by the stray commas.
+    df = pd.read_csv("Electric_Vehicle_Population_commas.csv")
+
+The read_csv() method fails and returns "Error tokenizing data" on line 100 of the data. Correcting this error, the read_csv() method finds the next error on line 200, and the method continues to throw parsing errors until the .csv file is clean. 
+
+The offending commas can be quickly removed using a text editor such as Notepad, Notepad++ or VS Code.
 
 
 
