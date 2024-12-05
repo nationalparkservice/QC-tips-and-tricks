@@ -8,11 +8,11 @@
 	
 # 1_getting_started
 
-QC'ing data can seem overwhelming at first. So, its important to be systematic in your approach from the outset. Assuming you have no familiarity what-so-ever with the dataset, the place to start is simply by exploring the columns and rows of data.  I will be using the terms "columns", "rows" and "dataframes" for all dataset descriptions. 
+QC'ing data can seem overwhelming at first, so its important to be systematic from the outset. Assuming you have no familiarity with the dataset, the place to start is simply by exploring the columns and rows of data. In the QC-phase of data publication, we won't typically be interpreting the data or doing a lot of subject-area analysis. Those tasks should be done independently by the data analyst and project leads in a separate workflow. 
 
-In the QC-phase of data publication, we won't typically be interpreting the data or doing a subject-area analysis. Those tasks should be done by the data analyst and project leads earlier in the workflow. Instead, we'll be focusing on the correctness of the data in the same sense that a proof-reader would focus on misspelling, format layout and appearence in the final evaluation of an article prior to its release for publication. In those instances where subject expertise is required, I'll indicate that you need to consult with a subject-area expert. In most instances, we are only looking for common anomalies caused by data handling, data loggers, database export functions and simple errors introduced during data editing.
+Instead, we'll be focusing on the correctness of the data in the same sense that a proof-reader would focus on misspelling, format layout and appearence in the final proof of an article prior to its release for publication. In those instances where subject expertise is needed, I'll clearly indicate that its necessary to consult with a subject-area expert. But in most instances, we will only looking for the common anomalies caused by data handling, data loggers, database export functions and simple errors introduced during data editing.
 
-In the examples that follow, you will need to load certain libraries for all your scripts. For R, you will need dplyr and ggplot or you can simply load the tidyverse platform which is what I will do here, and for Python, you will need pandas, matplotlib and the IPython platform. There are excellent instructions for setting up your development environment for R in the online book, https://r4ds.hadley.nz/ and for Python, https://wesmckinney.com/book/. If you plan on making a career out of data management, please consider supporting the authors by buying their books. 
+In the examples that follow, you will need to load certain libraries for all your scripts. For R, you can simply load tidyverse, and for Python, you will need pandas, matplotlib and the IPython platform. There are excellent instructions for setting up your development environment for R in the online book, https://r4ds.hadley.nz/ and for Python, https://wesmckinney.com/book/. If you plan to do data management long-term, please consider supporting the authors by buying their books. 
 
 As you write your scripts, be sure to include the following header code. For R, its
 
@@ -20,7 +20,6 @@ As you write your scripts, be sure to include the following header code. For R, 
 
 and for Python, 
 
-	import os
 	import pandas as pd
 	import matplotlib.pyplot as plt
 
@@ -42,35 +41,20 @@ For R, use
 	
 	view(df)
 	
-	
 
-For Python, use
-	
-	os.chdir("c:\\Users\\growell\\QC-tips-and-tricks\\1_getting_started")
-	print(os.getcwd())
+For Python, change directories in IPython using "cd" and "dir" for Windows or "cd" and "ls" for Unix and Linux.
 		
 	df = pd.read_csv("Electric_Vehicle_Population.csv")
 	df	
 		
-	df.head()
+	df.head(1000) # to view the first 1000 records
 	df.tail()
-		
-	pd.set_option('display.max_rows', None)
-	pd.set_option('display.max_columns', None)
-		
-	print(df)
-		
 
-When working with large dataframes in the IPython console, it may be impractical to display all rows, in which case you can simply display the first and last 100 or so rows as follows
-
-	df.head(100)
-	df.tail(100)
-	
-
+		
     
 # 1_2_setting_data_types
 
-Following your initial inspection of the data, you will need to verify and in some instances coerce data types so they correctly represent the data. For example, the R interpreter will load numeric columns as double by default, while the Python interpreter will load all numerical data as integer unless it sees a decimal point in the number. In these cases, you can manually coerce the data columns to the correct data type. 
+Following your initial inspection of the data, you will need to verify and in some instances modify data types so they correctly represent the data. For example, the R interpreter will load numeric columns as double by default, while the Python interpreter will load all numerical data as integer unless it sees a decimal point in the number. If needed, you can manually coerce the data columns to the correct data type. 
 
 In R, you can display the data types and coerce the double columns to integer as follows
 
@@ -80,15 +64,15 @@ In R, you can display the data types and coerce the double columns to integer as
 	  mutate(Vehicle_ID = as.integer(Vehicle_ID))
 
 
-In Python, you can use the dtypes method and coerce integer columns to float as follows
+In Python, you can view the data types and coerce integer columns to float as follows
 
-	print(df.dtypes)
+	df.dtypes
 	
 	df['Electric_Range'] = df['Electric_Range'].astype(float)
 	
 
 
-# 1_3_stray_commas
+# 1_3_stray_commas <<
 
 When you load csv files, you are using commas to parse the columns of your data. Any stray commas, for example, those embedded in a comments column, will break the parsing process. Extra commas will typically create extra columns. With R, this can be tracked using the problems() function. In the following example, I have introduced three stray commas into the dataset. Lets see if we can find them.
 
@@ -103,7 +87,7 @@ In Python, the read_csv() method fails and throws the exception "Error tokenizin
 
     df = pd.read_csv("Electric_Vehicle_Population_commas.csv")
 
-After correcting this error, the read_csv() method finds the next error on line 200, and so on. The offending commas can be quickly removed using a text editor such as Notepad.
+After correcting this error, the read_csv() method finds the next error on line 200, and so on. The offending commas can be quickly removed using a text editor such as Notepad. 
 
 
 # 1_4_additional_columns
@@ -113,10 +97,14 @@ More generally, it's not uncommon for extra columns to be generated by other pro
 You can test this in R
 
 	df <- read_csv("Electric_Vehicle_Population_extra_column.csv")
+	glimpse(df)
 
 and in Python
 
     df = pd.read_csv("Electric_Vehicle_Population_extra_column.csv")
+	df.head()
+
+In both cases, the extra column will be labeled "Extra Column" and populated with NAs in R or with NaNs in Python. The fastest way to resolve extra columns like this is to load them into a spreadsheet and visually inspect the problem.
 
 
 
