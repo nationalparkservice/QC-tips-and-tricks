@@ -1,8 +1,10 @@
 
 
 	2_exploring_the_dataset
-	2_1_one_big_set_many_small_sets
-
+	2_1_one_big_problem_many_small_problems
+	2_2_meaningful_groups
+	2_3_weird_variables s 
+	
 
 
 # 2_exploring_the_dataset
@@ -17,7 +19,7 @@ For R coding, move to the new directory using
 For Python, change your IPython shell to the new directory to "../2_exploring_the_dataset".
 
 
-# 2_1_one_big_set_many_small_sets
+# 2_1_one_big_problem_many_small_problems
 
 A universal tactic for any kind of problem solving is to reduce "one big problem" into many small problems. In data management, the common tool for data reduction is the select() command. Select() allows you to pull together meaningful columns of data. Begin by looking at all the columns and then pick individual columns that form a meaningful group. For example, we can look at all the columns of electric car data, then choose those columns which describe the make, model and year of the vehicle. This meaningful group can then be displayed along side less obvious columns.
 
@@ -89,7 +91,7 @@ In Python,
 
 Qc'ing data is facilitated by reviewing the columns of data and their relationships with each other. But sometimes you run into columns that are just plain weird. They might be internal logger indexes, device or user internal identifiers, columns that contain the repeated values on every row, and columns that contain information that is redundant with other columns of data. 
 
-The question is whether or not to omit these columns. All the columns in the Electric Vehicle dataset are pretty self-explanatory. The only column we haven't looked at is Vehicle_ID.  Its quite likely that a column with "ID" in the name is an index or key column. Later on, we will test to see whether Vehicle_ID is a unique "no-null" column, in which it could be used to join to other tables. 
+The question is whether or not to omit these columns. All the columns in the Electric Vehicle dataset are pretty self-explanatory. The only column we haven't looked at is Vehicle_ID.  Its quite likely that a column with "ID" in the name is an index or key column. Later on, we see how to test whether Vehicle_ID is a unique "no-null" column, in which case it could be used to join the dataset as a table to other tables. 
 
 
 
