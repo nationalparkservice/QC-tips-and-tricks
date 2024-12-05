@@ -7,7 +7,7 @@
 
 # 2_exploring_the_dataset
 
-After you've successfully loaded your csv file and all the columns line up correctly, its time to start looking at the values under each column. Typically, you'll be dealing with a very large number columns and again, the QC process can seem overwhelming.  Published datasets of almost always flattened csv flat files that might run up to 20 columns or more and it can sometimes be hard to figure out where to begin. In our electric dataset, there are 14 columns, so its a good example to work with.
+After you've successfully loaded your csv file and all the columns line up correctly, its time to start looking at the values under each column. Typically, you'll be dealing with a very large number columns and again, the QC process can seem overwhelming.  Published datasets are almost always flattened csv flat files that might run up to 20 columns or more and it can sometimes be hard to figure out where to begin. Note, you will need to move your R or Python session to the new folder.
 
 For R coding, move to the new directory using 
 
@@ -19,7 +19,7 @@ For Python, change your IPython shell to the new directory to "../2_exploring_th
 
 # 2_1_one_big_set_many_small_sets
 
-A universal tactic for any kind of problem solving is to reduce "one big problem" into many small problems. In data management, the common tool for data reduction is the select() command. Select allows you to pull together meaningful columns of data. Begin by looking at all the columns and then pick individual columns to form a meaningful group. For example, we can look at all the columns of electric car data, then choose those columns which describe the make, model and year of the vehicle. This meaningful group can then be displayed along side less obvious columns.
+A universal tactic for any kind of problem solving is to reduce "one big problem" into many small problems. In data management, the common tool for data reduction is the select() command. Select() allows you to pull together meaningful columns of data. Begin by looking at all the columns and then pick individual columns that form a meaningful group. For example, we can look at all the columns of electric car data, then choose those columns which describe the make, model and year of the vehicle. This meaningful group can then be displayed along side less obvious columns.
 
 In R, use the following code,
 
@@ -29,7 +29,8 @@ In R, use the following code,
 	df |> select(Make, Model, Model_Year)
 	
 
- and for Python, 
+	
+ and for Python, run the following code
 
 	df = pd.read_csv("Electric_Vehicle_Population.csv")
 	df.columns
@@ -38,54 +39,57 @@ In R, use the following code,
 
 
 
+# 2_2_meaningful_groups
 
+In the electric cars data, we can use the make, model and year to explore everything else. Here are some examples.
+
+Location information:
+
+In R,
+
+	df |> 
+      select(Make, Model, Model_Year, County, City, State, Postal_Code)
+	  
+In Python,
+
+	df[["Make", "Model", "Model_Year", 
+	    "County", "City", "State", "Postal_Code"]]
+
+
+Additional vehicle information:
+
+In R,
+
+	df |> 
+      select(Make, Model, Model_Year, Electric_Vehicle_Type,
+        Clean_Alternative_Fuel_Vehicle_CAFV_Eligibility, 
+	    Electric_Range, Base_MSRP)
 		
+In Python,
 
-# 2_2_meanigful_groups
+    df[["Make", "Model", "Model_Year", "Electric_Vehicle_Type",
+        "Clean_Alternative_Fuel_Vehicle_CAFV_Eligibility", 
+	    "Electric_Range", "Base_MSRP"]]
+		
+    
+Geopolitical and infrastructure:
 
-In the flights data, we can see three natural groups in the dataset: (1) the date/time columns, 2) the flight information and 3) additional information like tailnum and distance. Flight information can be further organized by arrivals, departures or as events data where each row represents a flight event. 
+In R,
 
-Let's start by selecting these groups.
+	df |> 
+      select(Make, Model, Model_Year, Legislative_District, Electric_Utility)
 
-Date/time information:
+In Python,
 
-    flights |>
-      select(year, month, day, hour, minute, time_hour)
-
-
-Flight information - arrivals (Note that dep_time and arr_time columns are in units of HMM or HHMM.)
-
-    flights |>
-      select(flight, carrier, origin, arr_time, arr_delay)
+    df[["Make", "Model", "Model_Year", "Legislative_District", "Electric_Utility"]]
 
 
-Flight information - departures
-
-    flights |>
-      select(flight, carrier, dest, dep_time, dep_delay)
-      
-      
-Flight information as events data
-
-    flights |>
-      select(year, month, day, hour, minute, flight, 
-             carrier, tailnum, origin, dep_time, sched_dep_time, dep_delay, 
-             dest, arr_time, sched_arr_time, arr_delay, air_time, distance) |>
-      view()
-
-      
-Additional flight information - individual planes
-
-    flights |> 
-      select(carrier, tailnum)
-
-      
-The events data represents a "tidy" dataset. Its called tidy because each row is an observation and each column is a unique variable. In database parlance, this would also be considered a "fact" table because each row represents a unique independent 'fact' or observation. The select() variable list in this instance is almost as large as select_all(), but the columns are organized so related variables are adjacent to each other. 
 
 # 2_3_weird_variables 
 
-Qc'ing data is facilitated by reviewing the columns of data and their relationships to each other. But sometimes you run into columns that are just plain weird. They might be internal logger indexes, device or user internal identifiers, columns that contain the same values on every row, and columns that contain information that is redundant with other columns of data. The question is whether or not to omit these columns. The time_hour column in the flights dataset appears to be redundant with the other date time columns and might be a candidate for omission. Since the decision to omit data requires subject area expertise, its absolutely critical to consult with subject experts on decisions whether or not to include certain columns. In the flights data, time_hour looks like its redundant with the columns year, month, day, hour, all of which are in a tidier format and are ready for analysis. 
+Qc'ing data is facilitated by reviewing the columns of data and their relationships with each other. But sometimes you run into columns that are just plain weird. They might be internal logger indexes, device or user internal identifiers, columns that contain the repeated values on every row, and columns that contain information that is redundant with other columns of data. 
 
+The question is whether or not to omit these columns. All the columns in the Electric Vehicle dataset are pretty self-explanatory. The only column we haven't looked at is Vehicle_ID.  Its quite likely that a column with "ID" in the name is an index or key column. Later on, we will test to see whether Vehicle_ID is a unique "no-null" column, in which it could be used to join to other tables. 
 
 
 
