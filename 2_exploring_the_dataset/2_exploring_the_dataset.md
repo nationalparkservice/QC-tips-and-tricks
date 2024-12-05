@@ -1,20 +1,47 @@
 
+
+	2_exploring_the_dataset
+	2_1_one_big_set_many_small_sets
+
+
+
 # 2_exploring_the_dataset
 
-After you've successfully loaded your csv file and all the columns line up correctly, its time to start looking at the values under each column. Typically, you'll be dealing with a very large number columns and the QC process can seem overwhelming.  Flattened csv flat files might run up to 20 columns or more and it can sometimes be hard to figure out where to begin. In our flights dataset, there are 19 columns, so its a good example to work with.
+After you've successfully loaded your csv file and all the columns line up correctly, its time to start looking at the values under each column. Typically, you'll be dealing with a very large number columns and again, the QC process can seem overwhelming.  Published datasets of almost always flattened csv flat files that might run up to 20 columns or more and it can sometimes be hard to figure out where to begin. In our electric dataset, there are 14 columns, so its a good example to work with.
+
+For R coding, move to the new directory using 
+
+	setwd("../2_exploring_the_dataset")
+	getwd()
+
+For Python, change your IPython shell to the new directory to "../2_exploring_the_dataset".
+
 
 # 2_1_one_big_set_many_small_sets
 
-In QC'ing data, one big problem can be usually be reduced to many small problems. The common tool for data reduction is the select() function. Select allows you to pull together meaningful groups of data, which I call "natural groups". You can begin to find natural groups using select_all(). 
+A universal tactic for any kind of problem solving is to reduce "one big problem" into many small problems. In data management, the common tool for data reduction is the select() command. Select allows you to pull together meaningful columns of data. Begin by looking at all the columns and then pick individual columns to form a meaningful group. For example, we can look at all the columns of electric car data, then choose those columns which describe the make, model and year of the vehicle. This meaningful group can then be displayed along side less obvious columns.
+
+In R, use the following code,
+
+	df <- read_csv("Electric_Vehicle_Population.csv")  
+	df |> select_all()
+
+	df |> select(Make, Model, Model_Year)
+	
+
+ and for Python, 
+
+	df = pd.read_csv("Electric_Vehicle_Population.csv")
+	df.columns
+	
+	df[["Make", "Model", "Model_Year"]]
 
 
-    library(tidyverse) 
-    library(nycflights13)
-    glimpse(flights)
-    
-    select_all(flights)
 
-# 2_2_natural_groups
+
+		
+
+# 2_2_meanigful_groups
 
 In the flights data, we can see three natural groups in the dataset: (1) the date/time columns, 2) the flight information and 3) additional information like tailnum and distance. Flight information can be further organized by arrivals, departures or as events data where each row represents a flight event. 
 
