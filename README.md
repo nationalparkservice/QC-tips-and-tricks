@@ -1,4 +1,4 @@
-# QC-tips-and-tricks
+# QC-tips-and-tricks - Use an oper-source ecological dataset??
 
 This is a small collection of techniques for establishing quality control over (QC'ing) datasets. These techniques can help you to clean up data prior to publishing datasets. Functionally equivalent code examples are given in R and Python. 
 
@@ -22,10 +22,10 @@ Note - this is currently a work-in-progress so please feel free to send question
 
     1_getting_started
     1_1_lay_of_the_land
-    1_2_designs_and_intentions
+    1_2_setting_data_types
     1_3_stray_commas
     1_4_additional_columns
-  
+	
     2_2_exploring_the_dataset
     2_1_one_big_set_many_small_sets
     2_2_natural_sets
