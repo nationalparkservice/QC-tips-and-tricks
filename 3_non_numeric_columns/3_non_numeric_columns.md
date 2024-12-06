@@ -2,10 +2,9 @@
 
     3_non_numeric_columns
 	3_1_identifying_non_numerics
-    3_2_typos
+    3_2_typos_and_other_character_errors
     3_3_categorical_errors
-    3_4_date_errors
-
+    3_4_date_time_errors
 
 
 
@@ -13,7 +12,7 @@
 
 What do we mean by non_numeric_columns? Here I'm defining them as everything that's not an integer, float or complex number numeric. I am deliberately leaving out composite data types such as lists, matrices and dictionaries. So, this section will deal with character, logical (Boolean), categorical and date times. This last group, date and times, does allow arithmetic operations, but we will only treat it as character data with special formatting needs.
 
-# 3_1_typos_and_other_character_errors
+# 3_1_identifying_non_numerics (see section 1_2. This is a bit redundant)
 
 How do we identify non-numeric columns in the dataset? Unfortunately, the management of data types is very language dependent. However, there are some basic operations shared by R and Python. The methods to display and convert data types are similar, and both languages have float, integer and complex-number numeric data types. Complex numbers very rarely come up in datasets, so we only need to focus on columns that are *not* integer or float numerics. 
 
@@ -34,6 +33,7 @@ In Python, you would use
 	df = pd.read_csv("Electric_Vehicle_Population.csv")
 	df.dtypes
 	
+3_2_typos_and_other_character_errors
 
 Combining select and distinct is a quick way to tame non-numeric columns. Case-sensitive errors and typos in text columns often jump out at you in a unique list. If there are a lot of unique values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. Typographical errors, upper and lower case irregularies, incorrect date-time formats and other text problems can often be located by creating unique lists. For this example,We'll see  how to validate data with a look-up table using left_join() below. I will address that in the next section. 
 
