@@ -10,11 +10,11 @@
 
 # 3_non_numeric_columns
 
-What do we mean by non_numeric_columns? Here I'm defining them as everything that's not an integer, float or complex number numeric. I am deliberately leaving out composite data types such as lists, matrices and dictionaries. So, this section will deal with character, logical (Boolean), categorical and date times. This last group, date and times, does allow arithmetic operations, but we will only treat it as character data with special formatting needs.
+What do we mean by non_numeric_columns? Here I'm defining them as everything that's not an integer, float or complex number. I am deliberately leaving out composite data types such as lists, matrices and dictionaries. So, this section will deal with character, logical (Boolean), categorical and date times. This last group, date and times, does allow arithmetic operations, but we will only treat the date-time type as character data with special formatting needs.
 
-# 3_1_identifying_non_numerics (see section 1_2. This is a bit redundant)
+# 3_1_identifying_non_numerics
 
-How do we identify non-numeric columns in the dataset? Unfortunately, the management of data types is very language dependent. However, there are some basic operations shared by R and Python. The methods to display and convert data types are similar, and both languages have float, integer and complex-number numeric data types. Complex numbers very rarely come up in datasets, so we only need to focus on columns that are *not* integer or float numerics. 
+How do we identify non-numeric columns in the dataset? Unfortunately, the management of data types is very language dependent. However, as we saw in Section 1_2, there are some basic operations shared by R and Python. The methods to display and convert data types are similar, and both languages have float, integer and complex-number numeric data types. Complex numbers very rarely show up in datasets, so we only need to focus on columns that are *not* integer or float numerics. 
 
 For R coding, move to the new directory using 
 
@@ -23,86 +23,41 @@ For R coding, move to the new directory using
 
 For Python, change your IPython shell to the new directory to "../3_non_numeric_columns".
 
-In R tidyverse, you can quickly determine the data types using glimpse(),
+In R tidyverse, as we saw in Section 1_2 earlier, you can quickly determine the data types using glimpse(),
 
 	df <- read_csv("Electric_Vehicle_Population.csv")  
 	glimpse(df)
 	
-In Python, you would use
+and in Python, you would use
 
 	df = pd.read_csv("Electric_Vehicle_Population.csv")
 	df.dtypes
 	
 3_2_typos_and_other_character_errors
 
-Combining select and distinct is a quick way to tame non-numeric columns. Case-sensitive errors and typos in text columns often jump out at you in a unique list. If there are a lot of unique values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. Typographical errors, upper and lower case irregularies, incorrect date-time formats and other text problems can often be located by creating unique lists. For this example,We'll see  how to validate data with a look-up table using left_join() below. I will address that in the next section. 
+Typographical errors, upper and lower case irregularies, incorrect date-time formats and other text problems can often be located by creating unique lists. Case-sensitive errors and typos in text columns often jump out at you in a unique list. If there are a lot of unique values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. In the following example, we will use the unique function to look at types and case-sensitive errors in two columns of the electric car dataset.
+
+For R, 
+
+	df <- read_csv("Electric_Vehicle_Population_typos.csv")  
+
+	df |> distinct(Electric_Vehicle_Type)
+	
+and for Python
+	
+	df = pd.read_csv("Electric_Vehicle_Population_types.csv")
+	
+	df["Electric_Vehicle_Type"].unique()
 
 
 
 
-Typographical errors, upper and lower case irregularies, incorrect date-time formats and other text problems can often be located by creating unique lists. For this example, 
 
 
 
 
-
-QC'ing categorical errors usually requires creating a unique list. The airlinea
-carrier codes are displayed as a unique list in code below.
-
-    
-    library(tidyverse)
-    library(nycflights13)
-
-    flights1 <- read_csv("./flights_day1.csv")
-
-    flights1 |>
-      distinct(carrier)
-    #># A tibble: 14 × 1
-    #> carrier
-    #>  <chr>  
-    #>  1 UA
-    #>  2 AA     
-    #>  3 B6     
-    #>  4 DL     
-    #>  5 EV     
-    #>  6 MQ     
-    #>  7 US     
-    #>  8 WN     
-    #>  9 VX     
-    #> 10 FL     
-    #> 11 AS     
-    #> 12 9E     
-    #> 13 F9     
-    #> 14 HA     
-
-      
-Next, I have introduced a single typo 'UAA' in the dataset. Try to locate the error.
 
     
-    #setwd("./3_select_distinct_left_join")
-    
-    flights_bad <- read_csv("./flights_bad_carrier.csv")
-    
-    flights_bad |>
-      distinct(carrier)   
-    #> # A tibble: 15 × 1
-    #>    carrier
-    #>    <chr>  
-    #>  1 UA     
-    #>  2 AA     
-    #>  3 B6     
-    #>  4 DL     
-    #>  5 EV     
-    #>  6 MQ     
-    #>  7 US     
-    #>  8 WN     
-    #>  9 VX     
-    #> 10 FL     
-    #> 11 AS     
-    #> 12 UAA    
-    #> 13 9E     
-    #> 14 F9     
-    #> 15 HA     
 
 # 3_2_Using_left_joins    
     
