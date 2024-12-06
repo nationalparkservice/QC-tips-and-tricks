@@ -33,7 +33,7 @@ and in Python, you would use
 	df = pd.read_csv("Electric_Vehicle_Population.csv")
 	df.dtypes
 	
-3_2_typos_and_other_character_errors
+# 3_2_typos_and_other_character_errors
 
 Typographical errors, upper and lower case irregularies, incorrect date-time formats and other text problems can often be located by creating unique lists. Case-sensitive errors and typos in text columns often jump out at you in a unique list. If there are a lot of unique values, for example species codes in a large lists of scientific names, you may also have the option of testing your data against look-up tables. In the following example, we will use the unique function to look at types and case-sensitive errors in two columns of the electric car dataset.
 
