@@ -1,4 +1,4 @@
-Vehicle_ID,County,City,State,Postal Code,Model Year,Make,Model,Electric Vehicle Type,Clean Alternative Fuel Vehicle (CAFV) Eligibility,Electric Range,Base MSRP,Legislative District,Electric Utility
+Vehicle_ID,County,City,State,Postal_Code,Model_Year,Make,Model,Electric_Vehicle_Type,Clean_Alternative_Fuel_Vehicle_CAFV_Eligibility,Electric_Range,Base_MSRP,Legislative_District,Electric_Utility
 1046,King,Bellevue,WA,98008,2022,TESLA,MODEL X,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,48,PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)
 1139,King,Bellevue,WA,98005,2013,NISSAN,LEAF,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,75,0,41,PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)
 1232,King,Seattle,WA,98103,2022,TESLA,MODEL 3,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,43,CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)
@@ -2206,7 +2206,7 @@ Vehicle_ID,County,City,State,Postal Code,Model Year,Make,Model,Electric Vehicle 
 204995,Snohomish,Snohomish,WA,98290,2015,NISSAN,LEAF,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,84,0,39,BONNEVILLE POWER ADMINISTRATION||PUD 1 OF SNOHOMISH COUNTY
 205088,King,Seattle,WA,98109,2024,TESLA,MODEL Y,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,36,CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)
 205181,Whatcom,Bellingham,WA,98225,2017,CHEVROLET,BOLT EV,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,238,0,42,PUGET SOUND ENERGY INC||PUD NO 1 OF WHATCOM COUNTY
-205274,Okanogan,Winthrop,WA,98862,2019,MINI,COUNTRYMAN,Plug-in Hybrid Electric Vehicle (PHEV),Not eligible due to low battery range,12,36900,12,"OKANOGAN COUNTY ELEC COOP
+205274,Okanogan,Winthrop,WA,98862,2019,MINI,COUNTRYMAN,Plug-in Hybrid Electric Vehicle (PHEV),Not eligible due to low battery range,12,36900,12,OKANOGAN COUNTY ELEC COOP
 205367,Grant,Warden,WA,98857,2023,TESLA,MODEL Y,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,13,PUD NO 2 OF GRANT COUNTY
 205460,King,Seattle,WA,98103,2022,TESLA,MODEL Y,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,46,CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)
 205553,Thurston,Olympia,WA,98502,2021,JEEP,WRANGLER,Plug-in Hybrid Electric Vehicle (PHEV),Not eligible due to low battery range,21,0,22,PUGET SOUND ENERGY INC
@@ -2217,15 +2217,15 @@ Vehicle_ID,County,City,State,Postal Code,Model Year,Make,Model,Electric Vehicle 
 206018,Spokane,Cheney,WA,99004,2022,KIA,SORENTO,Plug-in Hybrid Electric Vehicle (PHEV),Clean Alternative Fuel Vehicle Eligible,32,0,6,BONNEVILLE POWER ADMINISTRATION||AVISTA CORP||INLAND POWER & LIGHT COMPANY
 206111,Pulaski,Saint Robert,MO,65584,2023,TESLA,MODEL Y,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,,NON WASHINGTON STATE ELECTRIC UTILITY
 206204,King,Seattle,WA,98117,2018,TESLA,MODEL 3,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,215,0,36,CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)
-206297,King,Kirkland,WA,98033,2021,TESLA,MODEL Y,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,48,PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)
+206297,King,Kirkland,WA,98033,2021,TESLA,MODEL Y,Battery Electric Vehicle (BEV),Eligibility unknown as battry range has not been researched,0,0,48,PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)
 206390,Whatcom,Bellingham,WA,98226,2018,CHEVROLET,VOLT,Plug-in Hybrid Electric Vehicle (PHEV),Clean Alternative Fuel Vehicle Eligible,53,0,42,PUGET SOUND ENERGY INC||PUD NO 1 OF WHATCOM COUNTY
-206483,Snohomish,Everett,WA,98208,2013,TESLA,MODEL S,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,208,69900,44,PUGET SOUND ENERGY INC
-206576,Whatcom,Everson,WA,98247,2022,VOLVO,C40,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,42,PUGET SOUND ENERGY INC||PUD NO 1 OF WHATCOM COUNTY
-206669,Pierce,Tacoma,WA,98422,2021,TESLA,MODEL 3,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,27,BONNEVILLE POWER ADMINISTRATION||CITY OF TACOMA - (WA)||PENINSULA LIGHT COMPANY
-206762,Snohomish,Mukilteo,WA,98275,2013,NISSAN,LEAF,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,75,0,21,PUGET SOUND ENERGY INC
-206855,King,Des Moines,WA,98003,2014,BMW,I3,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,81,0,30,PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)
-206948,Pierce,Gig Harbor,WA,98332,2024,KIA,EV9,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,26,BONNEVILLE POWER ADMINISTRATION||CITY OF TACOMA - (WA)||PENINSULA LIGHT COMPANY
-207041,Benton,West Richland,WA,99353,2016,TESLA,MODEL S,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,210,0,8,BONNEVILLE POWER ADMINISTRATION||PUD NO 1 OF BENTON COUNTY
+206483,Snohomish,Everett,WA,98208,2013,TESLA,MODEL S,Battery electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,208,69900,44,PUGET SOUND ENERGY INC
+206576,Whatcom,Everson,WA,98247,2022,VOLVO,C40,Battery electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,42,PUGET SOUND ENERGY INC||PUD NO 1 OF WHATCOM COUNTY
+206669,Pierce,Tacoma,WA,98422,2021,TESLA,MODEL 3,Battery electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,27,BONNEVILLE POWER ADMINISTRATION||CITY OF TACOMA - (WA)||PENINSULA LIGHT COMPANY
+206762,Snohomish,Mukilteo,WA,98275,2013,NISSAN,LEAF,Battery electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,75,0,21,PUGET SOUND ENERGY INC
+206855,King,Des Moines,WA,98003,2014,BMW,I3,Battery electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,81,0,30,PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)
+206948,Pierce,Gig Harbor,WA,98332,2024,KIA,EV9,Battery electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,26,BONNEVILLE POWER ADMINISTRATION||CITY OF TACOMA - (WA)||PENINSULA LIGHT COMPANY
+207041,Benton,West Richland,WA,99353,2016,TESLA,MODEL S,Battery electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,210,0,8,BONNEVILLE POWER ADMINISTRATION||PUD NO 1 OF BENTON COUNTY
 207134,Spokane,Spokane Valley,WA,99212,2022,MITSUBISHI,OUTLANDER,Plug-in Hybrid Electric Vehicle (PHEV),Not eligible due to low battery range,24,0,4,BONNEVILLE POWER ADMINISTRATION||VERA IRRIGATION DISTRICT #15
 207227,Thurston,Olympia,WA,98513,2024,TESLA,MODEL Y,Battery Electric Vehicle (BEV),Eligibility unknown as battery range has not been researched,0,0,2,PUGET SOUND ENERGY INC
 207320,Benton,Richland,WA,99352,2018,TESLA,MODEL 3,Battery Electric Vehicle (BEV),Clean Alternative Fuel Vehicle Eligible,215,0,8,BONNEVILLE POWER ADMINISTRATION||CITY OF RICHLAND - (WA)
