@@ -77,7 +77,7 @@ In R, the anti-join operation works as follows,
 
 The output detects a single record where the Tesla model is "Model 0".
 
-In Python, there is no direct equivalent to the anti-join function. Instead, we can simply filter out the mismatched value using the Boolean condition method "is_in()" on the "Model" index. This is one instance where pandas differs considerably from tidyverse. Filtering in pandas is extremely flexible but it some understanding of indexing features of the pandas DataFrame object that are not available with R dataframe.
+In Python, there is no direct equivalent to the anti-join function. Instead, we can simply filter out the mismatched value using the Boolean condition method "is_in()" on the "Model" index. The overall concept is the same. We are filtering out records in the data that don't show up in the look-up table. 
 
 Note - I have set the display option to include max_columns to make it easier to read the Model value in the IPython shell. The outcome is the same, the Tesla "Model 0".
 
@@ -87,5 +87,6 @@ Note - I have set the display option to include max_columns to make it easier to
 	EV_LUT = pd.read_csv("EV_LUT.csv")
 	
 	df[~df['Model'].isin(EV_LUT['Model'])]
+
 
 
