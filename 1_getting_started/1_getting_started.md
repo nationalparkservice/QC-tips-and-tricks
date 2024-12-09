@@ -72,7 +72,7 @@ In Python, you can view the data types and coerce integer columns to float as fo
 	
 
 
-# 1_3_stray_commas <<
+# 1_3_stray_commas
 
 When you load csv files, you are using commas to parse the columns of your data. Any stray commas, for example, those embedded in a comments column, will break the parsing process. Extra commas will typically create extra columns. With R, this can be tracked using the problems() function. In the following example, I have introduced three stray commas into the dataset. Lets see if we can find them.
 

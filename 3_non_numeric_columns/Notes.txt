@@ -1,0 +1,16 @@
+
+
+
+df = pd.read_csv("Electric_Vehicle_Population.csv")
+ 
+eCar_LUT = df[["Make", "Model"]]
+ 
+eCar_LUT = eCar_LUT.drop_duplicates()
+ 
+eCar_LUT.to_csv("eCar_LUT.csv", index=False)
+
+
+ 
+
+
+

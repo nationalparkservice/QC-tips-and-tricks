@@ -91,7 +91,9 @@ In Python,
 
 Qc'ing data is facilitated by reviewing the columns of data and their relationships with each other. But sometimes you run into columns that are just plain weird. They might be internal logger indexes, device or user internal identifiers, columns that contain the repeated values on every row, and columns that contain information that is redundant with other columns of data. 
 
-The question is whether or not to omit these columns. All the columns in the Electric Vehicle dataset are pretty self-explanatory. The only column we haven't looked at is Vehicle_ID.  Its quite likely that a column with "ID" in the name is an index or key column. Later on, we see how to test whether Vehicle_ID is a unique "no-null" column, in which case it could be used to join the dataset as a table to other tables. 
+The question is whether or not to omit these columns. All the columns in the Electric Vehicle dataset are pretty self-explanatory. The only column we haven't looked at is Vehicle_ID.  Its quite likely that a column with "ID" in the name is an index or key column. Later on, we will see how to test whether Vehicle_ID is a unique "no-null" column, in which case it could be used as a primary key to join the dataset as a table to other tables. The other, less obvious, role of a unique "no-null" column is to make the dataset a *true* set by ensuring every row is unique. This is actually a requirement for tables in relational databases to function properly. This becomes more intuitive as soon as you try to join one table to another. 
+
+
 
 
 
